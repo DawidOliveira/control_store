@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
 
@@ -30,7 +31,7 @@
           </ul>
         </div>
       </header>
-      <div id="dw-s2" class="bmd-layout-drawer bg-faded bg-primary">
+      <div id="dw-s2" class="bmd-layout-drawer bg-faded">
         <header>
           <a class="navbar-brand">Title</a>
         </header>
