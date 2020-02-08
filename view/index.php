@@ -11,7 +11,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
   <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
 
   <title>Hello, world!</title>
@@ -19,34 +19,60 @@
 
 <body>
 
-    <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
-      <header class="bmd-layout-header">
-        <div class="navbar navbar-light bg-faded">
-          <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-s2">
-            <span class="sr-only">Toggle drawer</span>
-            <i class="material-icons">menu</i>
-          </button>
-          <ul class="nav navbar-nav">
-            <li class="nav-item">Title</li>
-          </ul>
-        </div>
-      </header>
-      <div id="dw-s2" class="bmd-layout-drawer bg-faded">
-        <header>
-          <a class="navbar-brand">Title</a>
-        </header>
-        <ul class="list-group">
-          <a class="list-group-item">Link 1</a>
-          <a class="list-group-item">Link 2</a>
-          <a class="list-group-item">Link 3</a>
+  <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+    <header class="bmd-layout-header">
+      <div class="navbar navbar-light bg-primary">
+        <button class="navbar-toggler btn btn-outline-white d-flex" type="button" data-toggle="drawer" data-target="#dw-s2">
+          <span class="sr-only">Toggle drawer</span>
+          <i class="material-icons text-white">menu</i>
+        </button>
+        <ul class="nav navbar-nav">
+          <li class="nav-item text-white">Cadastrar funcionários</li>
         </ul>
       </div>
-      <main class="bmd-layout-content">
+    </header>
+    <div id="dw-s2" class="bmd-layout-drawer bg-faded">
+      <header class="drawer-header bg-primary">
         <div class="container">
-          <p>Main content</p>
+          <div class="row">
+            <div class="col-sm d-flex align-items-sm-center">
+              <img src="assets/account.png" class="img-fluid" alt="Usuário">
+            </div>
+            <div class="col-lg">
+              <a href="#" class="h5 font-weight-bold text-white">Usuário</a>
+              <p class=" font-weight-light text-light">
+                Gerente
+              </p>
+              <a href="#" class="small text-white">Sair</a>
+            </div>
+          </div>
         </div>
-      </main>
+      </header>
+      <ul class="list-group">
+        <li class="active list-group-item">
+          Vendas
+        </li>
+        <li class="list-group-item">
+          Estoque
+        </li>
+        <li class="list-group-item">
+          Funcionários
+        </li>
+      </ul>
     </div>
+    <main class="bmd-layout-content">
+      <div class="container">
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="card-title display-4">
+              Cadastrar funcionário
+            </div>
+            <div class="card-subtitle text-muted">Cadastre um novo funcionário no sistema</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
 </body>
 
@@ -56,9 +82,10 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/bootstrap-material-design.min.js"></script>
 
-<script>$(document).ready(function() { 
-  $('body').bootstrapMaterialDesign();
-});
+<script>
+  $(document).ready(function() {
+    $('body').bootstrapMaterialDesign();
+  });
 </script>
 
 </html>
