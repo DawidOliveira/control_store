@@ -12,8 +12,7 @@
             //$valor = $_POST["valorCampo"];
             //$quantidade = $_POST["quantidadeCampo"];
             //$descricao = $_POST["descricaoCampo"];
-        }
-        
+        }        
 
         function cadastrarProduto($nome, $valor, $quantidade, $descricao){
             if($this->produtomodel->cadastrarProduto($nome, $valor, $quantidade, $descricao)){
@@ -22,7 +21,6 @@
                 return false;
             }
         }
-<<<<<<< Updated upstream
 
         function dadosProduto($cod){
             if($this->produtomodel->verificarProduto($cod)){
@@ -31,15 +29,25 @@
             }
             return null;
         }
-=======
 		
-		function dadosProduto($cod){
+		function deletarProduto($cod){			
 			if($this->produtomodel->verificarProduto($cod)){
-				$output = $this->produtomodel->dadosProduto($cod);
-				return $output;
+				$this->produtomodel->deletarProduto($cod);
+				echo("<script>alert('Produto deletado com sucesso!')</script>");
+			}else{
+				echo("<script>alert('O produto não foi encontrado!')</script>");
 			}
 		}
 		
->>>>>>> Stashed changes
+		function editarProduto($cod,$nome,$valor,$quantidade,$descricao){
+			if($this->produtomodel->verificarProduto($cod)){
+				$this->produtomodel->editarProduto($cod,$nome,$valor,$quantidade,$descricao)){
+				echo("<script>alert('Produto alterado com sucesso!')</script>");
+			}else{
+				echo("<script>alert('Código do produto não existe!')</script>");
+				
+			}
+		}
+		
     }
 ?>
