@@ -72,36 +72,54 @@
             <div class="card-subtitle text-muted">Cadastre um novo funcionário no sistema</div>
             <div class="card-body">
               <form action="#" method="POST">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend mx-4 my-2 ">
-                    <img src="assets/user.png" alt="user" width="32px" height="32px">
+                <div class="row">
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend mx-4 my-2 ">
+                        <img src="assets/user.png" alt="user" width="32px" height="32px">
+                      </div>
+                      <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" value="" name="name" aria-describedby="basic-addon1">
+                    </div>
                   </div>
-                  <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" value="" name="name" aria-describedby="basic-addon1">
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend mx-4 my-2 ">
+                        <img src="assets/user.png" alt="user" width="32px" height="32px"> </div>
+                      <input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
                 </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend mx-4 my-2 ">
-                    <img src="assets/user.png" alt="user" width="32px" height="32px"> </div>
-                  <input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+                <div class="row">
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend mx-4 my-2 ">
+                        <img src="assets/lock.png" alt="user" width="32px" height="32px"> </div>
+                      <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend mx-4 my-2 ">
+                        <img src="assets/confirm.png" alt="user" width="32px" height="32px"> </div>
+                      <input type="text" class="form-control" placeholder="Confirmar senha" aria-label="Confirmar senha" name="confirm_password" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
                 </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend mx-4 my-2 ">
-                    <img src="assets/lock.png" alt="user" width="32px" height="32px"> </div>
-                  <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend mx-4 my-2 ">
-                    <img src="assets/confirm.png" alt="user" width="32px" height="32px"> </div>
-                  <input type="text" class="form-control" placeholder="Confirmar senha" aria-label="Confirmar senha" name="confirm_password" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend mx-4 my-2 ">
-                    <img src="assets/price.png" alt="user" width="32px" height="32px"> </div>
-                  <input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend mx-4 my-2 ">
-                    <img src="assets/bank.png" alt="user" width="32px" height="32px"> </div>
-                  <input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1">
+                <div class="row">
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend mx-4 my-2 ">
+                        <img src="assets/price.png" alt="user" width="32px" height="32px"> </div>
+                      <input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend mx-4 my-2 ">
+                        <img src="assets/bank.png" alt="user" width="32px" height="32px"> </div>
+                      <input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend mx-4 my-2 ">
