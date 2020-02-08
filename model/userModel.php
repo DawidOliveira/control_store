@@ -60,6 +60,34 @@
 
         }
 
+        function buscarFuncionario($cpf){
+            
+            try{
+
+                $query = $this->conn->query("SELECT * from funcionarios where cpf = '$cpf';");
+                $dados = $query->fetch_array();
+                $array = array(
+                    "cpf"=>(string)$dados["cpf"],
+                    "nome"=>(string)$dados["nome"],
+                    "senha"=>(string)$dados["senha"],
+                    "salario"=>(string)$dados["salario"],
+                    "numero_conta"=>(string)$dados["numero_conta"],
+                    "cargo"=>(string)$dados["cargo"],
+                    "contratado_em"=>(string)$dados["contratado_em"],
+                );
+                
+                return $array;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+
+            }
+
+            return null;
+
+        }
+
         function editarFuncionario($cpf, $nome, $salario, $numero_conta, $cargo){
 
             try{
