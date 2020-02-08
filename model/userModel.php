@@ -65,9 +65,9 @@
         function funcExiste($cpf){
             try{
                 $query = $this->conn->query("SELECT count(*) as qtd from funcionarios where cpf = '$cpf';");
-                $qtd = mysqli_fetch_row($query);                             
+                $qtd = $query->num_rows;                             
                 
-                if($qtd[0] > 0 ){                    
+                if($qtd > 0 ){                    
                     return true;
                 } else {                    
                     return false;
