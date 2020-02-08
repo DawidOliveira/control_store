@@ -54,6 +54,26 @@
 
         }
 
+        function verificarProduto($cod){
+
+            try{
+
+                $query = $this->conn->query("SELECT * from produtos where cod=$cod;");
+                if ($query->num_rows > 0){
+                    return true;
+                }
+                return false;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+
+            }
+
+            return null;
+
+        }
+
         function editarProduto($cod,$nome,$valor,$quantidade,$descricao){
 
             try{
