@@ -60,8 +60,8 @@
 				<li class="list-group-item">
 					<a href="verEstoque">Estoque</a>
 				</li>
-				<li class=" active list-group-item">
-					<a href="#" class="text-white">Funcionários</a>
+				<li class="active list-group-item">
+					<a href="verFuncionario" class="text-white">Funcionários</a>
 				</li>
 			</ul>
 		</div>

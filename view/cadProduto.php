@@ -61,7 +61,7 @@
 					<a href="verEstoque" class="text-white">Estoque</a>
 				</li>
 				<li class="list-group-item">
-					Funcionários
+					<a href="verFuncionario">Funcionários</a>
 				</li>
 			</ul>
 		</div>

@@ -9,14 +9,14 @@
 	<!-- Material Design for Bootstrap fonts and icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-	<link rel="shortcut icon" href="../assets/list.png" type="image/x-icon">
+	<link rel="shortcut icon" href="../assets/user.png" type="image/x-icon">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../css/style.css">
 	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
 
-	<title>Estoque</title>
+	<title>Funcionários</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 					<i class="material-icons text-white">menu</i>
 				</button>
 				<ul class="nav navbar-nav">
-					<li class="nav-item text-white">Estoque</li>
+					<li class="nav-item text-white">Funcionários</li>
 				</ul>
 			</div>
 		</header>
@@ -57,11 +57,11 @@
 				<li class=" list-group-item">
 					Vendas
 				</li>
-				<li class=" active list-group-item">
-					<a href="verEstoque" class="text-white">Estoque</a>
-				</li>
 				<li class="list-group-item">
-					<a href="verFuncionario">Funcionários</a>
+					<a href="verEstoque">Estoque</a>
+				</li>
+				<li class="active list-group-item">
+					<a href="verFuncionario" class="text-white">Funcionários</a>
 				</li>
 			</ul>
 		</div>
@@ -72,16 +72,16 @@
 						<div class="card-title">
 							<div class="row">
 								<div class="col-9 display-4">
-									Estoque
+									Lista de funcionários
 								</div>
 								<div class="col text-left font-weight-light">
-									<a type="button" class="btn btn-raised btn-primary" href="cadProduto">
-										Cadastrar novo produto
+									<a type="button" class="btn btn-raised btn-primary" href="cadFuncionario">
+										Cadastrar novo funcionário
 									</a>
 								</div>
 							</div>
 						</div>
-						<div class="card-subtitle text-muted mb-4">Visualize e altere o estoque do sistema</div>
+						<div class="card-subtitle text-muted mb-4">Visualize e altere informações do usuário do sistema</div>
 						<div class="card-body">
 							<div class="row mt-3">
 								<div class="col-1">
