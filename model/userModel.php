@@ -52,12 +52,27 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao selecionar dados no banco!\nErro: $e')</script>");
 
             }
 
             return null;
 
+        }
+
+        function funcExiste($cpf){
+            try{
+                $query = $this->conn->query("SELECT count(*) as qtd from funcionarios where cpf = '$cpf';");
+                $qtd = mysqli_fetch_row($query);                             
+                
+                if($qtd[0] > 0 ){                    
+                    return true;
+                } else {                    
+                    return false;
+                }
+            } catch(Exception $e){
+                echo("<script>alert('Erro ao selecionar dados no banco!\nErro: $e')</script>");
+            }
         }
 
         function buscarFuncionario($cpf){
@@ -80,7 +95,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao selecionar dados no banco!\nErro: $e')</script>");
 
             }
 
@@ -116,7 +131,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao deletar dados no banco!\nErro: $e')</script>");
 
             }
 
