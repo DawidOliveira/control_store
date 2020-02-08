@@ -10,16 +10,14 @@
             $this->conn = $this->db->mysqli;
         }
 
-        function signUp($cpf, $nome, $senha, $confirmacaoSenha, $salario, $numero_conta, $cargo){
+        function signUp($cpf, $nome, $senha, $salario, $numero_conta, $cargo){
 
             try{
 
-                if($senha == $confirmacaoSenha){
-                    $pass = md5($senha);
-                    $hoje = date('y.m.d');
+                $pass = md5($senha);
+                $hoje = date('y.m.d');
 
-                    $query = $this->conn->query("INSERT into funcionarios (cpf,nome,senha,salario,numero_conta,cargo,contratado_em) values ('$cpf','$nome','$pass','$salario','$numero_conta','$cargo','$hoje');");
-                }
+                $this->conn->query("INSERT into funcionarios (cpf,nome,senha,salario,numero_conta,cargo,contratado_em) values ('$cpf','$nome','$pass','$salario','$numero_conta','$cargo','$hoje');");
 
                 return true;
 
@@ -66,7 +64,7 @@
 
             try{
 
-                $query = $this->conn->query("UPDATE funcionarios SET nome='$nome',salario='$salario',numero_conta='$numero_conta',cargo='$cargo' WHERE cpf = '$cpf';");
+                $this->conn->query("UPDATE funcionarios SET nome='$nome',salario='$salario',numero_conta='$numero_conta',cargo='$cargo' WHERE cpf = '$cpf';");
 
                 return true;
 
@@ -84,7 +82,7 @@
 
             try{
 
-                $query = $this->conn->query("DELETE from funcionarios WHERE cpf='$cpf';");
+                $this->conn->query("DELETE from funcionarios WHERE cpf='$cpf';");
 
                 return true;
 

@@ -35,10 +35,10 @@
                 $query = $this->conn->query("SELECT * from produtos where cod=$cod;");
                 $dados = $query->fetch_array();
                 $array = array(
-                    "cod"=>(string)$dados["cod"],
+                    "cod"=>$dados["cod"],
                     "nome"=>(string)$dados["nome"],
                     "valor"=>(string)$dados["valor"],
-                    "quantidade"=>(string)$dados["quantidade"],
+                    "quantidade"=>$dados["quantidade"],
                     "descricao"=>(string)$dados["descricao"],
                 );
                 
