@@ -10,7 +10,7 @@
 
                 $host = "localhost";
                 $user = "root";
-                $pass = "";
+                $pass = "password";
                 $db = "control_store";
         
                 $this->mysqli = new mysqli($host,$user,$pass,$db);
