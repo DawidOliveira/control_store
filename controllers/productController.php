@@ -22,6 +22,7 @@
                 return false;
             }
         }
+<<<<<<< Updated upstream
 
         function dadosProduto($cod){
             if($this->produtomodel->verificarProduto($cod)){
@@ -30,5 +31,15 @@
             }
             return null;
         }
+=======
+		
+		function dadosProduto($cod){
+			if($this->produtomodel->verificarProduto($cod)){
+				$output = $this->produtomodel->dadosProduto($cod);
+				return $output;
+			}
+		}
+		
+>>>>>>> Stashed changes
     }
 ?>
