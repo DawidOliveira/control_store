@@ -135,7 +135,7 @@
 										</div>
 									</select>
 								</div>
-								<button type="submit" class="btn btn-outline-primary btn-lg btn-block">Cadastrar funcionário</button>
+								<button name="cad" type="submit" class="btn btn-outline-primary btn-lg btn-block">Cadastrar funcionário</button>
 							</form>
 						</div>
 					</div>
@@ -159,3 +159,11 @@
 </script>
 
 </html>
+
+<?php
+	require('../controllers/userController.php');
+	$userController = new UserController();
+	if(isset($_POST['cad'])){
+		$userController->signUp((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['password'],(string)$_POST['confirm_password'],(string)$_POST['salary'],(string)$_POST['bank-account'],(string)$_POST['cargo']);
+	}
+?>
