@@ -73,7 +73,7 @@
 				<br>
 				<a href="/control_store/view/cadProduto">Cadastrar produto</a>
 				<br>
-				<a href="/control_store/view/verProduto">Ver estoque</a>
+				<a href="/control_store/view/verEstoque">Ver estoque</a>
 				<br>
 				<a href="/control_store/view/verFuncionario">Ver funcionarios</a>
 
