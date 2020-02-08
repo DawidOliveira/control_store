@@ -32,10 +32,11 @@
 
         }
 
+
+        //
         function signIn($cpf, $senha){
             
             try{
-
                 $pass = md5($senha);
                 $query = $this->conn->query("SELECT * from funcionarios where cpf = '$cpf' and senha = '$pass';");
                 if($query->num_rows > 0){

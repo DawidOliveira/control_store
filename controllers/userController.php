@@ -15,12 +15,14 @@
             //$num_conta = $_POST["contaCampo"];
             //$cargo = $_POST["cargoCampo"];
         }
-        
+                
         function signUp($cpf, $nome, $senha, $conf_senha, $salario, $num_conta, $cargo){                           
             if($senha == $conf_senha){
-                if($this->user->signUp($cpf, $nome, $senha, $salario, $num_conta, $cargo)){                
+                if($this->user->signUp($cpf, $nome, $senha, $salario, $num_conta, $cargo)){
+                    echo("<script>alert('Usuário cadastrado!')</script>")                ;
                     return true;                
-                } else{                
+                } else{ 
+                    echo("<script>alert('Erro ao inserir no banco de dados!')</script>")                ;
                     return false;
                 }
             } else {
@@ -28,9 +30,24 @@
                 return false;
             }           
         }
+        
+        function signIn($cpf, $senha){
+            session_start();
 
-        function signIn(){
-            
+            if(!($this->user->signIn($cpf, $senha))){
+                unset ($_SESSION['cpf']);
+                unset ($_SESSION['senha']);
+                echo("<script>alert('CPF ou senha incorretos!')</script>"); 
+                
+                return false;
+            }
+            else{
+                $_SESSION['cpf'] = $cpf;
+                $_SESSION['senha'] = $senha;
+                echo("<script>alert('Usuário logado!')</script>"); 
+                
+                return $this->user->signIn($cpf, $senha);
+            }
         }
 
         function editarFuncionario($cpf, $nome, $salario, $numero_conta, $cargo){
