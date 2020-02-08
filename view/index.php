@@ -61,7 +61,7 @@
 					<a href="verEstoque">Estoque</a>
 				</li>
 				<li class="list-group-item">
-					Funcionários
+					<a href="verFuncionario" >Funcionários</a>
 				</li>
 			</ul>
 		</div>
@@ -73,7 +73,10 @@
 				<br>
 				<a href="/control_store/view/cadProduto">Cadastrar produto</a>
 				<br>
-				<a href="/control_store/view/cadProduto">Ver estoque</a>
+				<a href="/control_store/view/verProduto">Ver estoque</a>
+				<br>
+				<a href="/control_store/view/verFuncionario">Ver funcionarios</a>
+
 			</div>
 		</main>
 	</div>
