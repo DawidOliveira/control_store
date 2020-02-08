@@ -72,7 +72,7 @@
             <div class="card-title display-4">
               Cadastrar funcionário
             </div>
-            <div class="card-subtitle text-muted">Cadastre um novo funcionário no sistema</div>
+            <div class="card-subtitle text-muted mb-4">Cadastre um novo funcionário no sistema</div>
             <div class="card-body">
               <form action="#" method="POST">
                 <div class="row">

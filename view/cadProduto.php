@@ -9,7 +9,7 @@
   <!-- Material Design for Bootstrap fonts and icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-  <link rel="shortcut icon" href="../assets/layout.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/list.png" type="image/x-icon">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../css/style.css">
@@ -72,7 +72,7 @@
             <div class="card-title display-4">
               Cadastrar produto
             </div>
-            <div class="card-subtitle text-muted">Cadastre um novo produto no sistema</div>
+            <div class="card-subtitle text-muted mb-4">Cadastre um novo produto no sistema</div>
             <div class="card-body">
               <form action="#" method="POST">
                 <div class="row">
@@ -105,7 +105,7 @@
                   <div class="col">
                     <div class="input-group mb-3">
                       <div class="input-group-prepend mx-4 my-2 ">
-                        <img src="../assets/confirm.png" alt="user" width="32px" height="32px"> </div>
+                        <img src="../assets/list.png" alt="user" width="32px" height="32px"> </div>
                       <textarea class="form-control" rows="4" placeholder="Descrição do produto" aria-label="description" name="description"></textarea>
                     </div>
                   </div>
