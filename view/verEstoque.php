@@ -69,8 +69,17 @@
 			<div class="container">
 				<div class="card mt-3">
 					<div class="card-body">
-						<div class="card-title display-4">
-							Estoque
+						<div class="card-title">
+							<div class="row">
+								<div class="col display-4">
+									Estoque
+								</div>
+								<div class="col-2 text-left font-weight-light">
+									<a type="button" class="btn btn-raised btn-primary" href="cadProduto">
+										Cadastrar novo produto
+									</a>
+								</div>
+							</div>
 						</div>
 						<div class="card-subtitle text-muted mb-4">Visualize e altere o estoque do sistema</div>
 						<div class="card-body">
