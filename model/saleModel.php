@@ -15,14 +15,58 @@
             try{
 
                 $prod = $this->conn->query("SELECT valor,quantidade from produtos where cod = $cod_produtoFK;");
-
-                $valor_total = $quantidade * $prod->fetch_array()["valor"];
+                $aux = $prod->fetch_array();
+                $valor_total = $quantidade * $aux["valor"];
                 
-                $query = $this->conn->query("INSERT into venda (cod_produtoFK,cpf_funcionarioFK,quantidade,valor_total) values ($cod_produtoFK,'$cpf_funcionarioFK',$quantidade,'$valor_total');");
+                $this->conn->query("INSERT into venda (cod_produtoFK,cpf_funcionarioFK,quantidade,valor_total) values ($cod_produtoFK,'$cpf_funcionarioFK',$quantidade,'$valor_total');");
                 
-                $nova_quantidade = $prod->fetch_array()["quantidade"] - $quantidade;
+                $nova_quantidade = $aux["quantidade"] - $quantidade;
 
-                $atualizarProd = $this->conn->query("UPDATE produtos SET quantidade = $nova_quantidade WHERE cod = $cod_produtoFK;");
+                $this->conn->query("UPDATE produtos SET quantidade = $nova_quantidade WHERE cod = $cod_produtoFK;");
+
+                return true;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+
+            }
+
+            return false;
+
+        }
+
+        function dadosVenda($cod){
+            
+            try{
+
+                $query = $this->conn->query("SELECT * from venda where cod=$cod;");
+                $dados = $query->fetch_array();
+                $array = array(
+                    "cod"=>$dados["cod"],
+                    "cod_produtoFK"=>(string)$dados["cod_produtoFK"],
+                    "cpf_funcionarioFK"=>(string)$dados["cpf_funcionarioFK"],
+                    "quantidade"=>$dados["quantidade"],
+                    "valor_total"=>(string)$dados["valor_total"],
+                );
+                
+                return $array;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+
+            }
+
+            return null;
+
+        }
+
+        function deletarVenda($cod){
+
+            try{
+
+                $this->conn->query("DELETE from venda WHERE cod='$cod';");
 
                 return true;
 
