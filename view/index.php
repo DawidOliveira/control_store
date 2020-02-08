@@ -9,12 +9,14 @@
   <!-- Material Design for Bootstrap fonts and icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
+  <link rel="shortcut icon" href="assets/user.png" type="image/x-icon">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/style.css">
   <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
   <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
 
-  <title>Hello, world!</title>
+  <title>Cadastrar funcionário</title>
 </head>
 
 <body>
@@ -69,51 +71,51 @@
             </div>
             <div class="card-subtitle text-muted">Cadastre um novo funcionário no sistema</div>
             <div class="card-body">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/user.png" alt="user" width="32px" height="32px">
-                </div>
-                <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" value="" name="name" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/user.png" alt="user" width="32px" height="32px"> </div>
-                <input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/lock.png" alt="user" width="32px" height="32px"> </div>
-                <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/confirm.png" alt="user" width="32px" height="32px"> </div>
-                <input type="text" class="form-control" placeholder="Confirmar senha" aria-label="Confirmar senha" name="confirm_password" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/price.png" alt="user" width="32px" height="32px"> </div>
-                <input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/bank.png" alt="user" width="32px" height="32px"> </div>
-                <input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend mx-4 my-2 ">
-                  <img src="assets/wheel.png" alt="user" width="32px" height="32px"> </div>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Cargo
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Gerente</a>
-                    <a class="dropdown-item" href="#">Funcionário</a>
+              <form action="#" method="POST">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/user.png" alt="user" width="32px" height="32px">
                   </div>
+                  <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" value="" name="name" aria-describedby="basic-addon1">
                 </div>
-              </div>
-              <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Block level button</button>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/user.png" alt="user" width="32px" height="32px"> </div>
+                  <input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/lock.png" alt="user" width="32px" height="32px"> </div>
+                  <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/confirm.png" alt="user" width="32px" height="32px"> </div>
+                  <input type="text" class="form-control" placeholder="Confirmar senha" aria-label="Confirmar senha" name="confirm_password" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/price.png" alt="user" width="32px" height="32px"> </div>
+                  <input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/bank.png" alt="user" width="32px" height="32px"> </div>
+                  <input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend mx-4 my-2 ">
+                    <img src="assets/wheel.png" alt="user" width="32px" height="32px"></div>
+                  <select class="form-control" name="cargo">
+                    <div class="my-4">
+                      <option class="form-control">Cargo do novo funcionário</option>
+                      <option class="form-control" value="func">Funcionário</option>
+                      <option class="form-control" value="manager">Gerente</option>
+                    </div>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Cadastrar</button>
+              </form>
             </div>
           </div>
         </div>
