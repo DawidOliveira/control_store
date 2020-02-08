@@ -65,6 +65,32 @@
 
         }
 
+        function editarFuncionario($cpf, $nome, $senha, $confirmacaoSenha, $salario, $numero_conta, $cargo){
+
+            try{
+
+                if($senha == $confirmacaoSenha){
+                    $pass = md5($senha);
+                    $hoje = date('y.m.d');
+
+                    $query = $this->conn->query("INSERT into funcionarios (cpf,nome,senha,salario,numero_conta,cargo) values ('$cpf','$nome','$pass','$salario','$numero_conta','$cargo');");
+
+                    return true;
+                }
+
+                return true;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                return false;
+
+            }
+
+            return false;
+
+        }
+
 
     }
 
