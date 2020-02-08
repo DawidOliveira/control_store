@@ -38,18 +38,21 @@
 
                 $pass = md5($senha);
                 $query = $this->conn->query("SELECT * from funcionarios where cpf = '$cpf' and senha = '$pass';");
-                $dados = $query->fetch_array();
-                $array = array(
-                    "cpf"=>(string)$dados["cpf"],
-                    "nome"=>(string)$dados["nome"],
-                    "senha"=>(string)$dados["senha"],
-                    "salario"=>(string)$dados["salario"],
-                    "numero_conta"=>(string)$dados["numero_conta"],
-                    "cargo"=>(string)$dados["cargo"],
-                    "contratado_em"=>(string)$dados["contratado_em"],
-                );
+                if($query->num_rows > 0){
+                    $dados = $query->fetch_array();
+                    $array = array(
+                        "cpf"=>(string)$dados["cpf"],
+                        "nome"=>(string)$dados["nome"],
+                        "senha"=>(string)$dados["senha"],
+                        "salario"=>(string)$dados["salario"],
+                        "numero_conta"=>(string)$dados["numero_conta"],
+                        "cargo"=>(string)$dados["cargo"],
+                        "contratado_em"=>(string)$dados["contratado_em"],
+                    );
+                    return $array;
+                }
                 
-                return $array;
+                return false;
 
             }catch(Exception $e){
 
