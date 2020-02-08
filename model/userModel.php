@@ -64,7 +64,7 @@
         //feita
         function funcExiste($cpf){
             try{
-                $query = $this->conn->query("SELECT count(*) as qtd from funcionarios where cpf = '$cpf';");
+                $query = $this->conn->query("SELECT * from funcionarios where cpf = '$cpf';");
                 $qtd = $query->num_rows;                             
                 
                 if($qtd > 0 ){                    
