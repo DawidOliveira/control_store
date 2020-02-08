@@ -18,9 +18,13 @@
 
                 echo "<script>alert('Cadastrado com sucesso!');</script>";
 
+                return true;
+
             }catch(Exception $e){
 
                 echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+
+                return false;
 
             }
 
