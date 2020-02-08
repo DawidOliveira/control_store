@@ -1,6 +1,6 @@
 <?php
     
-    class UserModel {
+    class ProductModel {
 
         private $db,$conn;
         
@@ -10,25 +10,25 @@
             $this->conn = $this->db->mysqli;
         }
 
-        function signUp($cpf, $nome, $senha, $salario, $numero_conta, $cargo){
+        function cadastrarProduto($nome,$valor,$quantidade,$descricao){
 
             try{
 
-                $pass = md5($senha);
-                $hoje = date('y.m.d');
+                $query = $this->conn->query("INSERT into produtos (nome,valor,quantidade,descricao) values ('$nome','$valor',$quantidade,'$descricao');");
 
-                $query = $this->conn->query("INSERT into funcionarios (cpf,nome,senha,salario,numero_conta,cargo,contratado_em) values ('$cpf','$nome','$pass','$salario','$numero_conta','$cargo','$hoje');");
-
-                echo "<script>alert('Cadastrado com sucesso!');</script>";
+                return true;
 
                 return true;
 
             }catch(Exception $e){
 
                 echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+
                 return false;
 
             }
+
+            return true;
 
         }
 
