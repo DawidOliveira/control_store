@@ -16,7 +16,7 @@
             //$cargo = $_POST["cargoCampo"];
         }
         
-        function signUp($cpf, $nome, $senha, $conf_senha, $salario, $num_conta, $cargo){                                            
+        function signUp($cpf, $nome, $senha, $conf_senha, $salario, $num_conta, $cargo){                           
             if($senha == $conf_senha){
                 if($this->user->signUp($cpf, $nome, $senha, $salario, $num_conta, $cargo)){                
                     return true;                
@@ -25,15 +25,33 @@
                 }
             } else {
                 echo("<script>alert('Senhas diferentes!')</script>");
-
                 return false;
             }           
         }
 
+        function signIn(){
+            
+        }
+
         function editarFuncionario($cpf, $nome, $salario, $numero_conta, $cargo){
-            if($this->user->funcExist($cpf)){
-                echo("<script>alert('ruim jao')</script>");
-            } 
+            if($this->user->funcExiste($cpf)){
+                if($this->user->editarFuncionario($cpf, $nome, $salario, $numero_conta, $cargo)){
+                    echo("<script>alert('Funcionário alterado com sucesso!')</script>");
+                }
+            } else {
+                echo("<script>alert('CPF não existente.')</script>");
+            }
+        }
+
+        function deletarFuncionario($cpf){
+            if($this->user->funcExiste($cpf)){
+                if($this->user->deletarFuncionario($cpf)){
+                    echo("<script>alert('Funcionário deletado com sucesso!')</script>");
+                } 
+            } else {
+                echo("<script>alert('CPF não existente!')</script>");
+            }
         }
     }   
 ?>
+

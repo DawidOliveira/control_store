@@ -10,6 +10,7 @@
             $this->conn = $this->db->mysqli;
         }
 
+        //feita
         function signUp($cpf, $nome, $senha, $salario, $numero_conta, $cargo){
 
             try{
@@ -60,6 +61,7 @@
 
         }
 
+        //feita
         function funcExiste($cpf){
             try{
                 $query = $this->conn->query("SELECT count(*) as qtd from funcionarios where cpf = '$cpf';");
@@ -75,6 +77,7 @@
             }
         }
 
+        //feita
         function buscarFuncionario($cpf){
             
             try{
@@ -103,6 +106,7 @@
 
         }
 
+        //feita
         function editarFuncionario($cpf, $nome, $salario, $numero_conta, $cargo){
 
             try{
@@ -121,6 +125,7 @@
 
         }
 
+        //feita
         function deletarFuncionario($cpf){
 
             try{
