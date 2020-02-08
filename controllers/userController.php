@@ -42,11 +42,12 @@
                 return false;
             }
             else{
+                $dados = $this->user->buscarFuncionario($cpf);
+
                 $_SESSION['cpf'] = $cpf;
                 $_SESSION['senha'] = $senha;
-                echo("<script>alert('Usuário logado!')</script>"); 
-                
-                return $this->user->signIn($cpf, $senha);
+                $_SESSION['dados'] = $dados;
+                echo("<script>alert('Usuário logado!')</script>");                              
             }
         }
 
