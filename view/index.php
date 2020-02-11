@@ -16,71 +16,42 @@
 	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
 
-	<title>Página inicial</title>
+	<title>Cadastrar funcionário</title>
 </head>
 
-<body>
-
-	<div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
-		<header class="bmd-layout-header">
-			<div class="navbar navbar-light bg-primary">
-				<button class="navbar-toggler btn btn-outline-white d-flex" type="button" data-toggle="drawer" data-target="#dw-s2">
-					<span class="sr-only">Toggle drawer</span>
-					<i class="material-icons text-white">menu</i>
-				</button>
-				<ul class="nav navbar-nav">
-					<li class="nav-item text-white">Cadastrar funcionários</li>
-				</ul>
-			</div>
-		</header>
-		<div id="dw-s2" class="bmd-layout-drawer bg-faded">
-			<header class="drawer-header bg-primary">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm d-flex align-items-sm-center">
-							<img src="../assets/account.png" class="img-fluid" alt="Usuário">
+<body class="gradiente">
+      <div class="container">
+				<div class="card d-flex align-items-center vertical">
+					<div class="card-body">
+						<div class="card-title display-4">
+							Fazer login
 						</div>
-						<div class="col-lg">
-							<a href="#" class="h5 font-weight-bold text-white">Usuário</a>
-							<p class=" font-weight-light text-light">
-								Gerente
-							</p>
-							<a href="#" class="small text-white">Sair</a>
+						<div class="card-subtitle text-muted mb-4">Faça seu login para acessar o sistema</div>
+						<div class="card-body">
+							<form action="#" method="POST">
+								<div class="row">
+									<div class="col">
+										<div class="input-group mb-3">
+											<div class="input-group-prepend mx-4 my-2 ">
+												<img src="../assets/user.png" alt="user" width="32px" height="32px"> </div>
+											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<div class="input-group mb-3">
+											<div class="input-group-prepend mx-4 my-2 ">
+												<img src="../assets/lock.png" alt="user" width="32px" height="32px"> </div>
+											<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+										</div>
+									</div>
+								<a name="login" type="submit" class="btn btn-raised btn-primary btn-lg btn-block" href="verEstoque">login</a>
+							</form>
 						</div>
 					</div>
 				</div>
-			</header>
-			<ul class="list-group pt-0">
-				<li class="active list-group-item">
-					<a href="index" class="text-white">Home</a>
-				</li>
-				<li class=" list-group-item">
-					Vendas
-				</li>
-				<li class="list-group-item">
-					<a href="verEstoque">Estoque</a>
-				</li>
-				<li class="list-group-item">
-					<a href="verFuncionario" >Funcionários</a>
-				</li>
-			</ul>
-		</div>
-		<main class="bmd-layout-content">
-			<div class="container">
-				paginas:
-				<br>
-				<a href="/control_store/view/cadFuncionario">Cadastrar funcionario</a>
-				<br>
-				<a href="/control_store/view/cadProduto">Cadastrar produto</a>
-				<br>
-				<a href="/control_store/view/verEstoque">Ver estoque</a>
-				<br>
-				<a href="/control_store/view/verFuncionario">Ver funcionarios</a>
-
 			</div>
-		</main>
-	</div>
-
 </body>
 
 <script src="../js/jquery-3.4.1.min.js"></script>
@@ -96,3 +67,11 @@
 </script>
 
 </html>
+
+<?php
+	require('../controllers/userController.php');
+	$userController = new UserController();
+	if(isset($_POST['cad'])){
+		$userController->signUp((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['password'],(string)$_POST['confirm_password'],(string)$_POST['salary'],(string)$_POST['bank-account'],(string)$_POST['cargo']);
+	}
+?>
