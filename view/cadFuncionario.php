@@ -52,10 +52,7 @@
 			</header>
 			<ul class="list-group pt-0">
 				<li class="list-group-item">
-					<a href="index">Home</a>
-				</li>
-				<li class=" list-group-item">
-					Vendas
+					<a href="vendas">Vendas</a>
 				</li>
 				<li class="list-group-item">
 					<a href="verEstoque">Estoque</a>
