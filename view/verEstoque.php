@@ -82,10 +82,10 @@
 							</div>
 						</div>
 						<div class="card-subtitle text-muted mb-4">Visualize e altere o estoque do sistema</div>
-						<div class="card-body">
+						<div class="card-body gradiente">
 							<div class="row mt-3">
 								<div class="col-1">
-									<img src="../assets/bank.png" alt="produto" width="64" height="64">
+									<img src="../assets/list.png" alt="produto" width="64" height="64">
 								</div>
 								<div class="col">
 									<div class="card">
@@ -152,7 +152,7 @@
 																		</div>
 																	</div>
 																	<div class="col-auto">
-																		<button type="button" class="btn btn-raised btn-primary" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A exclusão do produto foi realizada">
+																		<button type="submit" name="enviarSenha" class="btn btn-raised btn-primary" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A exclusão do produto foi realizada">
 																			Confirmar
 																		</button>
 																	</div>
@@ -195,7 +195,16 @@
 																		</div>
 																	</div>
 																	<div class="col">
-																		<button type="button" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
+																		<div class="input-group mb-3">
+																			<div class="input-group-prepend mx-4 my-2 ">
+																				<img src="../assets/lock.png" alt="user" width="32px" height="32px"> </div>
+																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col">
+																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
 																			Confirmar
 																		</button>
 																	</div>
