@@ -52,10 +52,7 @@
 			</header>
 			<ul class="list-group pt-0">
 				<li class="list-group-item">
-					<a href="index">Home</a>
-				</li>
-				<li class=" list-group-item">
-					Vendas
+					<a href="vendas">Vendas</a>
 				</li>
 				<li class="list-group-item">
 					<a href="verEstoque">Estoque</a>
@@ -82,41 +79,35 @@
 							</div>
 						</div>
 						<div class="card-subtitle text-muted mb-4">Visualize e altere informações do usuário do sistema</div>
-						<div class="card-body">
+						<div class="card-body gradiente">
 							<div class="row mt-3">
 								<div class="col-1">
-									<img src="../assets/bank.png" alt="produto" width="64" height="64">
+									<img src="../assets/user.png" alt="funcionario" width="64" height="64">
 								</div>
 								<div class="col">
 									<div class="card">
 										<div class="card-title h5 font-weight-bold mx-2 my-2">
-											Nome do produto
+											Nome do funcionário
 										</div>
 										<div class="card-body mr-3">
 											<div class="row">
 												<div class="col">
-													<span class="font-weight-bold">Valor</span>
-													<p class="font-weight-light">valor do produto aqui</p>
+													<span class="font-weight-bold">Cargo</span>
+													<p class="font-weight-light">cargo do funcionário aqui</p>
 												</div>
 												<div class="col">
-													<span class="font-weight-bold">Quantidade no estoque</span>
-													<p class="font-weight-light">quantidade do produto aqui</p>
+													<span class="font-weight-bold">Salário</span>
+													<p class="font-weight-light">salário do funcionário aqui</p>
 												</div>
 												<div class="col">
-													<span class="font-weight-bold">Código</span>
-													<p class="font-weight-light">código do produto aqui</p>
+													<span class="font-weight-bold">CPF</span>
+													<p class="font-weight-light">CPF do funcionário aqui</p>
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-11" style="height: 100%">
-													<div class="card bg-primary">
-														<div class="card-title font-weight-bold mx-2 my-2 text-left text-white">
-															Descrição do produto
-														</div>
-														<div class="card-body text-light">
-															Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corporis asperiores eos nemo dolores, eius veniam ipsam voluptatem nulla magni exercitationem possimus nam harum earum voluptatum velit cupiditate quos dignissimos!
-														</div>
-													</div>
+												<div class="col-11">
+													<span class="font-weight-bold">Data de contratação</span>
+													<p class="font-weight-light">Contratado em: dd/mm/yyyy</p>
 												</div>
 												<div class="col-1">
 													<div class="row">
@@ -141,7 +132,7 @@
 														<div class="collapse" id="deleteProduto">
 															<div class="card card-body">
 																<span class="text-warning font-weight-bold">
-																	Digite sua senha para confirmar a exclusão do produto
+																	Digite sua senha para confirmar a exclusão do funcionário
 																</span>
 																<div class="row">
 																	<div class="col">
@@ -152,7 +143,7 @@
 																		</div>
 																	</div>
 																	<div class="col-auto">
-																		<button type="button" class="btn btn-raised btn-primary" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A exclusão do produto foi realizada">
+																		<button type="submit" name="enviarSenha" class="btn btn-raised btn-primary" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A exclusão do produto foi realizada">
 																			Confirmar
 																		</button>
 																	</div>
@@ -168,9 +159,16 @@
 														<div class="collapse" id="editProduto">
 															<div class="card card-body">
 																<span class="font-weight-bold">
-																	Editar informações do produto
+																	Editar informações do funcionário
 																</span>
 																<div class="row">
+																	<div class="col">
+																		<div class="input-group mb-3">
+																			<div class="input-group-prepend mx-4 my-2 ">
+																				<img src="../assets/user.png" alt="edit" width="32px" height="32px"> </div>
+																			<input type="text" class="form-control" placeholder="CPF" readonly aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+																		</div>
+																	</div>
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
@@ -178,11 +176,26 @@
 																			<input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="name" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
+																</div>
+																<div class="row">
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
-																				<img src="../assets/price.png" alt="price" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Valor" aria-label="Valor" name="price" aria-describedby="basic-addon1">
+																				<img src="../assets/price.png" alt="salary" width="32px" height="32px"> </div>
+																			<input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
+																		</div>
+																	</div>
+																	<div class="col">
+																		<div class="input-group mb-3">
+																			<div class="input-group-prepend mx-4 my-2 ">
+																				<img src="../assets/wheel.png" alt="user" width="32px" height="32px"></div>
+																			<select class="form-control" name="cargo">
+																				<div class="my-4">
+																					<option class="form-control">Cargo do funcionário</option>
+																					<option class="form-control" value="func">Funcionário</option>
+																					<option class="form-control" value="manager">Gerente</option>
+																				</div>
+																			</select>
 																		</div>
 																	</div>
 																</div>
@@ -190,12 +203,14 @@
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
-																				<img src="../assets/more.png" alt="quantity" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Quantidade" aria-label="Quantidade" name="quantity" aria-describedby="basic-addon1">
+																				<img src="../assets/lock.png" alt="password" width="32px" height="32px"> </div>
+																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
+																</div>
+																<div class="row">
 																	<div class="col">
-																		<button type="button" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
+																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block">
 																			Confirmar
 																		</button>
 																	</div>

@@ -58,10 +58,7 @@
 			</header>
 			<ul class="list-group pt-0">
 				<li class="list-group-item">
-					<a href="index">Home</a>
-				</li>
-				<li class=" list-group-item">
-					Vendas
+					<a href="vendas">Vendas</a>
 				</li>
 				<li class=" active list-group-item">
 					<a href="verEstoque" class="text-white">Estoque</a>
@@ -215,13 +212,14 @@
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
-																				<img src="../assets/lock.png" alt="user" width="32px" height="32px"> </div>
+																				<img src="../assets/lock.png" alt="password" width="32px" height="32px"> </div>
 																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																</div>
 																<div class="row">
 																	<div class="col">
+<<<<<<< HEAD
 																		<div class="input-group mb-6">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/more.png" alt="Description" width="32px" height="32px"></div>
@@ -233,6 +231,9 @@
 																<div class="row">
 																	<div class="col">
 																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
+=======
+																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block">
+>>>>>>> f212bd2d262e7cb382eb180deafba85516546e3c
 																			Confirmar
 																		</button>
 																	</div>
@@ -264,7 +265,6 @@
 
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../js/popper.min.js"></script>
-<script src="https://cdn.rawgit.com/FezVrasta/snackbarjs/1.1.0/dist/snackbar.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/bootstrap-material-design.min.js"></script>
