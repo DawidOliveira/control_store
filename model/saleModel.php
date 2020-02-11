@@ -28,7 +28,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
+                echo("<script>alert('Erro ao consultar banco!')</script>");
 
             }
 
@@ -54,12 +54,26 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
+                echo("<script>alert('Erro ao consultar banco!')</script>");
 
             }
 
             return null;
 
+        }
+
+        function verificarVenda($cod){
+            try{
+
+                $query = $this->conn->query("SELECT * from venda where cod=$cod");
+                if($query->num_rows>0){
+                    return true;
+                }
+                return false;
+
+            }catch(Exception $e){
+                echo("<script>alert('Erro ao consultar banco!')</script>");
+            }
         }
 
         function deletarVenda($cod){
@@ -72,7 +86,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
+                echo("<script>alert('Erro ao consultar banco!')</script>");
 
             }
 
