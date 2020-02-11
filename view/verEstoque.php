@@ -219,7 +219,6 @@
 																</div>
 																<div class="row">
 																	<div class="col">
-<<<<<<< HEAD
 																		<div class="input-group mb-6">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/more.png" alt="Description" width="32px" height="32px"></div>
@@ -231,9 +230,6 @@
 																<div class="row">
 																	<div class="col">
 																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
-=======
-																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block">
->>>>>>> f212bd2d262e7cb382eb180deafba85516546e3c
 																			Confirmar
 																		</button>
 																	</div>
@@ -242,6 +238,7 @@
 																	// adaptar função para confirmar senha
 																	if(isset($_POST['editarInfo'])){
 																		$pc->editarProduto($product[0],(string)$_POST['name'],(string)$_POST['price'],$_POST['quantity'],(string)$_POST['name'],(string)$_POST['desc']);
+																	break;
 																	}
 																?>
 															</div>
