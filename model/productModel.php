@@ -95,7 +95,7 @@
 
             try{
 
-                $this->conn->query("UPDATE produtos SET nome='$nome',valor='$valor',quantidade='$quantidade',descricao='$descricao' WHERE cod = '$cod';");
+                $this->conn->query("UPDATE produtos SET nome='$nome',valor='$valor',quantidade=$quantidade,descricao='$descricao' WHERE cod = $cod;");
 
                 return true;
 

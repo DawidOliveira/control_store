@@ -154,7 +154,7 @@
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/lock.png" alt="lock" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																	<div class="col-auto">
@@ -166,8 +166,7 @@
 																	// adaptar função para confirmar senha
 																		if(isset($_POST['enviarSenha'])){
 																			$pc->deletarProduto($product[0]);
-																			header('Refresh:0');
-																			echo "<script>location.reload();</script>";
+																			echo "<script>location.href='verEstoque';</script>";
 																			break;
 																		}
 																	?>
@@ -190,14 +189,16 @@
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/edit.png" alt="edit" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="name" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="name<?php echo $product[0]; ?>"
+																			value="<?php echo $product[1]; ?>"
+																			aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/price.png" alt="price" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Valor" aria-label="Valor" name="price" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Valor" aria-label="Valor" name="price<?php echo $product[0]; ?>" value="<?php echo $product[2]; ?>" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																</div>
@@ -206,14 +207,14 @@
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/more.png" alt="quantity" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Quantidade" aria-label="Quantidade" name="quantity" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Quantidade" aria-label="Quantidade" name="quantity<?php echo $product[0]; ?>" value="<?php echo $product[3]; ?>"aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/lock.png" alt="password" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																</div>
@@ -222,7 +223,7 @@
 																		<div class="input-group mb-6">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/more.png" alt="Description" width="32px" height="32px"></div>
-																				<textarea type="text" class="form-control" placeholder="Descrição" aria-label="Descricao" name="desc" aria-describedby="basic-addon1"></textarea>
+																				<textarea type="text" class="form-control" placeholder="Descrição" aria-label="Descricao" name="desc<?php echo $product[0]; ?>" aria-describedby="basic-addon1"><?php echo $product[4]; ?></textarea>
 																		</div>
 																	</div>
 																</div>
@@ -237,8 +238,8 @@
 																<?php
 																	// adaptar função para confirmar senha
 																	if(isset($_POST['editarInfo'])){
-																		$pc->editarProduto($product[0],(string)$_POST['name'],(string)$_POST['price'],$_POST['quantity'],(string)$_POST['name'],(string)$_POST['desc']);
-																	break;
+																		$pc->editarProduto($product[0],(string)$_POST['name'.$product[0]],(string)$_POST['price'.$product[0]],$_POST['quantity'.$product[0]],(string)$_POST['desc'.$product[0]]);
+																		echo "<script>location.href='verEstoque';</script>";
 																	}
 																?>
 															</div>
