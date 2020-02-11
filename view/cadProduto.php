@@ -110,7 +110,7 @@
 										</div>
 									</div>
 								</div>
-								<button type="submit" class="btn btn-outline-primary btn-lg btn-block">Cadastrar produto</button>
+								<button type="submit" class="btn btn-outline-primary btn-lg btn-block" name="cadProduto">Cadastrar produto</button>
 							</form>
 						</div>
 					</div>
@@ -134,3 +134,15 @@
 </script>
 
 </html>
+
+<?php
+
+	require("../controllers/productController.php");
+
+	$pc = new ProductController();
+	
+	if(isset($_POST['cadProduto'])){
+		$pc->cadastrarProduto((string)$_POST['name'],(string)$_POST['price'],$_POST['quantity'],(string)$_POST['description']);
+	}
+
+?>

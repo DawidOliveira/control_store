@@ -11,7 +11,7 @@
                 $host = "localhost";
                 $user = "root";
                 $pass = "";
-                $db = "control_store";
+                $db = "Control_Store";
         
                 $this->mysqli = new mysqli($host,$user,$pass,$db);
             }catch(Exception $e){

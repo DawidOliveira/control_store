@@ -14,7 +14,7 @@
 
             try{
 
-                $query = $this->conn->query("INSERT into produtos (nome,valor,quantidade,descricao) values ('$nome','$valor',$quantidade,'$descricao');");
+                $this->conn->query("INSERT into produtos (nome,valor,quantidade,descricao) values ('$nome','$valor',$quantidade,'$descricao');");
 
                 return true;
 
@@ -54,6 +54,23 @@
 
         }
 
+        function todosDados(){
+
+            try{
+
+                $query = $this->conn->query("SELECT * from produtos;");
+                $dados = $query->fetch_all();
+                
+                return $dados;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
+
+            }
+
+        }
+
         function verificarProduto($cod){
 
             try{
@@ -78,7 +95,7 @@
 
             try{
 
-                $query = $this->conn->query("UPDATE produtos SET nome='$nome',valor='$valor',quantidade='$quantidade',descricao='$descricao' WHERE cod = '$cod';");
+                $this->conn->query("UPDATE produtos SET nome='$nome',valor='$valor',quantidade='$quantidade',descricao='$descricao' WHERE cod = '$cod';");
 
                 return true;
 
@@ -96,7 +113,7 @@
 
             try{
 
-                $query = $this->conn->query("DELETE from produtos WHERE cod='$cod';");
+                $this->conn->query("DELETE from produtos WHERE cod=$cod;");
 
                 return true;
 

@@ -1,3 +1,9 @@
+<?php
+	require("../controllers/productController.php");
+	$pc = new ProductController();
+	$dados = $pc->todosDados();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -82,6 +88,9 @@
 							</div>
 						</div>
 						<div class="card-subtitle text-muted mb-4">Visualize e altere o estoque do sistema</div>
+						<?php
+							foreach($dados as $product){
+						?>
 						<div class="card-body gradiente">
 							<div class="row mt-3">
 								<div class="col-1">
@@ -90,21 +99,21 @@
 								<div class="col">
 									<div class="card">
 										<div class="card-title h5 font-weight-bold mx-2 my-2">
-											Nome do produto
+											<?php echo $product[1]; ?>
 										</div>
 										<div class="card-body mr-3">
 											<div class="row">
 												<div class="col">
 													<span class="font-weight-bold">Valor</span>
-													<p class="font-weight-light">valor do produto aqui</p>
+													<p class="font-weight-light"><?php echo $product[2]; ?></p>
 												</div>
 												<div class="col">
 													<span class="font-weight-bold">Quantidade no estoque</span>
-													<p class="font-weight-light">quantidade do produto aqui</p>
+													<p class="font-weight-light"><?php echo $product[3]; ?></p>
 												</div>
 												<div class="col">
 													<span class="font-weight-bold">Código</span>
-													<p class="font-weight-light">código do produto aqui</p>
+													<p class="font-weight-light"><?php echo $product[0]; ?></p>
 												</div>
 											</div>
 											<div class="row">
@@ -114,7 +123,7 @@
 															Descrição do produto
 														</div>
 														<div class="card-body text-light">
-															Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corporis asperiores eos nemo dolores, eius veniam ipsam voluptatem nulla magni exercitationem possimus nam harum earum voluptatum velit cupiditate quos dignissimos!
+															<?php echo $product[4]; ?>
 														</div>
 													</div>
 												</div>
@@ -156,6 +165,15 @@
 																			Confirmar
 																		</button>
 																	</div>
+																	<?php
+																	// adaptar função para confirmar senha
+																		if(isset($_POST['enviarSenha'])){
+																			$pc->deletarProduto($product[0]);
+																			header('Refresh:0');
+																			echo "<script>location.reload();</script>";
+																			break;
+																		}
+																	?>
 																</div>
 															</div>
 														</div>
@@ -204,11 +222,27 @@
 																</div>
 																<div class="row">
 																	<div class="col">
+																		<div class="input-group mb-6">
+																			<div class="input-group-prepend mx-4 my-2 ">
+																				<img src="../assets/more.png" alt="Description" width="32px" height="32px"></div>
+																				<textarea type="text" class="form-control" placeholder="Descrição" aria-label="Descricao" name="desc" aria-describedby="basic-addon1"></textarea>
+																		</div>
+																	</div>
+																</div>
+																
+																<div class="row">
+																	<div class="col">
 																		<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
 																			Confirmar
 																		</button>
 																	</div>
 																</div>
+																<?php
+																	// adaptar função para confirmar senha
+																	if(isset($_POST['editarInfo'])){
+																		$pc->editarProduto($product[0],(string)$_POST['name'],(string)$_POST['price'],$_POST['quantity'],(string)$_POST['name'],(string)$_POST['desc']);
+																	}
+																?>
 															</div>
 														</div>
 													</div>
@@ -219,6 +253,7 @@
 								</div>
 							</div>
 						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

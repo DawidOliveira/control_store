@@ -29,6 +29,17 @@
             }
             return null;
         }
+        
+        function todosDados(){
+            try{
+                $dados = $this->produtomodel->todosDados();
+                
+                return $dados;
+            }catch(Exception $e){
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
+            }
+
+        }
 		
 		function deletarProduto($cod){			
 			if($this->produtomodel->verificarProduto($cod)){
