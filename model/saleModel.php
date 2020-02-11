@@ -29,7 +29,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
 
             }
 
@@ -55,7 +55,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
 
             }
 
@@ -74,7 +74,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
 
             }
 
