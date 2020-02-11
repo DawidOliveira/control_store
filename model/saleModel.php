@@ -10,6 +10,7 @@
             $this->conn = $this->db->mysqli;
         }
 
+        //feito
         function cadastrarVenda($cod_produtoFK,$cpf_funcionarioFK,$quantidade){
 
             try{
@@ -62,6 +63,7 @@
 
         }
 
+        //feito
         function deletarVenda($cod){
 
             try{
