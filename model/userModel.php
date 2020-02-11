@@ -24,7 +24,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
 
             }
 
@@ -57,7 +57,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao selecionar dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao selecionar dados no banco!')</script>");
 
             }
 
@@ -77,7 +77,7 @@
                     return false;
                 }
             } catch(Exception $e){
-                echo("<script>alert('Erro ao selecionar dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao selecionar dados no banco!')</script>");
             }
         }
 
@@ -102,7 +102,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao selecionar dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao selecionar dados no banco!')</script>");
 
             }
 
@@ -121,7 +121,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao inserir dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
 
             }
 
@@ -140,7 +140,7 @@
 
             }catch(Exception $e){
 
-                echo("<script>alert('Erro ao deletar dados no banco!\nErro: $e')</script>");
+                echo("<script>alert('Erro ao deletar dados no banco!')</script>");
 
             }
 
