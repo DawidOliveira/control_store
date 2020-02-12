@@ -44,7 +44,7 @@
 		function deletarProduto($cod){			
 			if($this->produtomodel->verificarProduto($cod)){
 				$this->produtomodel->deletarProduto($cod);
-				echo("<script>alert('Produto deletado com sucesso!')</script>");
+                echo("<script>alert('Produto deletado com sucesso!')</script>");
 			}else{
 				echo("<script>alert('O produto não foi encontrado!')</script>");
 			}

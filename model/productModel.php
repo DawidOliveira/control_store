@@ -113,6 +113,7 @@
 
             try{
 
+                $this->conn->query("DELETE from venda WHERE cod_produtoFK='$cod';");
                 $this->conn->query("DELETE from produtos WHERE cod=$cod;");
 
                 return true;

@@ -127,14 +127,14 @@
 												<div class="col-1">
 													<div class="row">
 														<div class="col">
-															<button type="button" class="btn btn-outline btn-primary" data-target="#deleteProduto" aria-expanded="false" aria-controls="deleteProduto" data-toggle="collapse"><i class="material-icons">
+															<button type="button" class="btn btn-outline btn-primary" data-target="#deleteProduto<?php echo $product[0]; ?>" aria-expanded="false" aria-controls="deleteProduto" data-toggle="collapse"><i class="material-icons">
 																	delete
 																</i></button>
 														</div>
 													</div>
 													<div class="row">
 														<div class="col">
-															<button type="button" class="btn btn-outline btn-primary" data-target="#editProduto" aria-expanded="false" aria-controls="editProduto" data-toggle="collapse"><i class="material-icons">
+															<button type="button" class="btn btn-outline btn-primary" data-target="#editProduto<?php echo $product[0]; ?>" aria-expanded="false" aria-controls="editProduto" data-toggle="collapse"><i class="material-icons">
 																	edit
 																</i></button>
 														</div>
@@ -144,12 +144,19 @@
 											<form action="#" method="post">
 												<div class="row mt-3">
 													<div class="col">
-														<div class="collapse" id="deleteProduto">
+														<div class="collapse" id="deleteProduto<?php echo $product[0]; ?>">
 															<div class="card card-body">
 																<span class="text-warning font-weight-bold">
 																	Digite sua senha para confirmar a exclusão do produto
 																</span>
 																<div class="row">
+																	<div class="col">
+																		<div class="input-group mb-3">
+																			<div class="input-group-prepend mx-4 my-2 ">
+																				<img src="../assets/lock.png" alt="lock" width="32px" height="32px"> </div>
+																			<input type="text" class="form-control" readonly value="<?php echo $product[0]; ?>" aria-label="Senha" name="codDelete" aria-describedby="basic-addon1">
+																		</div>
+																	</div>
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
@@ -162,14 +169,7 @@
 																			Confirmar
 																		</button>
 																	</div>
-																	<?php
-																	// adaptar função para confirmar senha
-																		if(isset($_POST['enviarSenha'])){
-																			$pc->deletarProduto($product[0]);
-																			echo "<script>location.href='verEstoque';</script>";
-																			break;
-																		}
-																	?>
+																	
 																</div>
 															</div>
 														</div>
@@ -179,7 +179,7 @@
 											<form action="#" method="post">
 												<div class="row">
 													<div class="col">
-														<div class="collapse" id="editProduto">
+														<div class="collapse" id="editProduto<?php echo $product[0]; ?>">
 															<div class="card card-body">
 																<span class="font-weight-bold">
 																	Editar informações do produto
@@ -253,6 +253,14 @@
 							</div>
 						</div>
 						<?php } ?>
+						<?php
+							// adaptar função para confirmar senha
+								if(isset($_POST['enviarSenha'])){
+									$d = $_POST['codDelete'];
+									$pc->deletarProduto($d);
+									echo "<script>location.href='verEstoque';</script>";
+								}
+							?>
 					</div>
 				</div>
 			</div>
