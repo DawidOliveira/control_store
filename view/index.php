@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['logado']) and $_SESSION['logado']){
+		header('Location: verEstoque');
+	}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -34,7 +41,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/user.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1" required/>
 										</div>
 									</div>
 								</div>
@@ -43,10 +50,10 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/lock.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+											<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1" required/>
 										</div>
 									</div>
-								<a name="login" type="submit" class="btn btn-raised btn-primary btn-lg btn-block" href="verEstoque">login</a>
+								<button name="login" type="submit" class="btn btn-raised btn-primary btn-lg btn-block">login</button>
 							</form>
 						</div>
 					</div>
@@ -71,7 +78,7 @@
 <?php
 	require('../controllers/userController.php');
 	$userController = new UserController();
-	if(isset($_POST['cad'])){
-		$userController->signUp((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['password'],(string)$_POST['confirm_password'],(string)$_POST['salary'],(string)$_POST['bank-account'],(string)$_POST['cargo']);
+	if(isset($_POST['login'])){
+		$userController->signIn((string)$_POST['cpf'],(string)$_POST['password']);
 	}
 ?>

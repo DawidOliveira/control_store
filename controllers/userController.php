@@ -32,6 +32,10 @@
         }
         
         function signIn($cpf, $senha){
+            // if ( session_status() !== PHP_SESSION_ACTIVE ){
+            //    session_start();
+            // }
+
             session_start();
 
             if(!($this->user->signIn($cpf, $senha))){
@@ -43,7 +47,7 @@
             }
             else{
                 $dados = $this->user->buscarFuncionario($cpf);
-
+                $_SESSION['logado'] = true;
                 $_SESSION['cpf'] = $cpf;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['dados'] = $dados;
@@ -69,6 +73,11 @@
             } else {
                 echo("<script>alert('CPF não existente!')</script>");
             }
+        }
+
+        function logout(){
+            session_destroy();
+            header("Location: index");
         }
     }   
 ?>

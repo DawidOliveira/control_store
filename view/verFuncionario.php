@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
+		header('Location: index');
+	}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -41,11 +48,18 @@
 							<img src="../assets/account.png" class="img-fluid" alt="Usuário">
 						</div>
 						<div class="col-lg">
-							<a href="#" class="h5 font-weight-bold text-white">Usuário</a>
+							<a href="#" class="h5 font-weight-bold text-white"><?php echo $_SESSION['dados']['nome'] ?></a>
 							<p class=" font-weight-light text-light">
-								Gerente
+								<?php echo $_SESSION['dados']['cargo'] ?>
 							</p>
-							<a href="#" class="small text-white">Sair</a>
+							<a href="?func=logout" class="small text-white">Sair</a>
+							<?php
+								if(isset($_GET['func']) and $_GET['func']='logout'){
+									require('../controllers/userController.php');
+									$uc = new UserController();
+									$uc->logout();
+								}
+							?>
 						</div>
 					</div>
 				</div>
