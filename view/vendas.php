@@ -78,29 +78,14 @@
 						<div class="card-subtitle text-muted mb-4">Realizar vendas no sistema</div>
 						<div class="gradiente">
 							<div class="card-body">
-                                <div id="item">
-                                </div>
+                                <form action="#" method="post">
+									<div id="item">
+
+									</div>
+									<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" name="finalizarVenda">Finalizar Venda</button>
+								</form>
 							</div>
 						</div>
-						<?php
-							// adaptar função para confirmar senha
-								if(isset($_POST['enviarSenha'])){
-									$d = $_POST['codDelete'];
-									$pc->deletarProduto($d);
-									echo "<script>location.href='verEstoque';</script>";
-								}
-						?>
-						<?php
-							if(isset($_POST['editarInfo'])){
-								if($_SESSION['dados']['senha'] == md5($_POST['password'])){
-									$pc->editarProduto($product[0],(string)$_POST['name'.$product[0]],(string)$_POST['price'.$product[0]],$_POST['quantity'.$product[0]],(string)$_POST['desc'.$product[0]]);
-									echo "<script>location.href='verEstoque';</script>";
-								}
-								else{
-									echo "<script>window.alert('Digite uma senha válida');</script>";
-								}
-							}
-						?>
 					</div>
 				</div>
 			</div>
@@ -118,42 +103,44 @@
 <script>
 	$(document).ready(function() {
 		$('body').bootstrapMaterialDesign();
-        $('#addProduto').click(function(){
-            let content =           '<div class="row mt-3">'+
-                                        '<div class="col-1">'+
-                                            '<img src="../assets/list.png" alt="produto" width="64" height="64">'+
-                                        '</div>'+
-                                        '<div class="col">'+
-                                            '<div class="card">'+
-                                                '<div class="card-title h5 font-weight-bold mx-2 my-2">'+
-                                                    'Nome do produto'+
-                                                '</div>'+
-                                                '<div class="card-body mr-3">'+
-                                                    '<div class="row">'+
-                                                        '<div class="col">'+
-                                                            '<span class="font-weight-bold">Valor</span>'+
-                                                            '<p class="font-weight-light">valor do produto</p>'+
-                                                        '</div>'+
-                                                        '<div class="col">'+
-                                                            '<span class="font-weight-bold">Quantidade no estoque</span>'+
-                                                            '<p class="font-weight-light">quantidade</p>'+
-                                                        '</div>'+
-                                                        '<div class="col">'+
-                                                            '<span class="font-weight-bold">Código</span>'+
-                                                            '<p class="font-weight-light">codigo</p>'+
-                                                        '</div>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</div>'
-
-            let lista = []
-            lista.push(content)
-        })
-        for(let i=0; i<lista.length;i++){
+		let count = 0
+		let content =	    '<div class="row mt-3">'+
+								'<div class="col-1">'+
+									'<img src="../assets/list.png" alt="produto" width="64" height="64">'+
+								'</div>'+
+								'<div class="col">'+
+									'<div class="card">'+
+										'<div class="card-title h5 mx-2 my-2">'+
+											'<div class="input-group">'+
+												'<select class="form-control" name="produto">'+
+													'<div class="my-4">'+
+														'<option class="form-control" value="Produto">Produto</option>'+
+													'</div>'+
+												'</select>'+
+											'</div>'+
+										'</div>'+
+										'<div class="card-body mr-3">'+
+											'<div class="row">'+
+												'<div class="col">'+
+													'<span class="font-weight-bold">Quantidade</span>'+
+													'<div class="input-group mb-3">'+
+														'<input type="number" class="form-control" placeholder="Quantidade" title="Digite apenas números" aria-label="quantidade" name="quantity" aria-describedby="basic-addon1">'+
+													'</div>'+
+												'</div>'+
+												'<div class="col">'+
+													'<span class="font-weight-bold">Valor</span>'+
+													'<p class="font-weight-light">valor do produto</p>'+
+												'</div>'+
+											'</div>'+
+										'</div>'+
+									'</div>'+
+								'</div>'+
+							'</div>'
+		$('#addProduto').click(function(){
             document.getElementById("item").innerHTML += content
-        }
+			count++
+			alert(count)
+        })
 	});
 </script>
 
