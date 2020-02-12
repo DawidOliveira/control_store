@@ -82,7 +82,9 @@
 									<div id="item">
 
 									</div>
-									<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" name="finalizarVenda">Finalizar Venda</button>
+									<div class="mt-4">
+										<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" id="finalizarVenda" style="display: none">Finalizar Venda</button>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -139,7 +141,9 @@
 		$('#addProduto').click(function(){
             document.getElementById("item").innerHTML += content
 			count++
-			alert(count)
+			if(count>=1){
+				document.getElementById('finalizarVenda').style.display = 'block'
+			}
         })
 	});
 </script>
