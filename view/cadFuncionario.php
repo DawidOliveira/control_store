@@ -1,8 +1,8 @@
 <?php
-	session_start();
-	if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
-		header('Location: index');
-	}
+	// session_start();
+	// if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
+	// 	header('Location: index');
+	// }
 ?>
 <!doctype html>
 <html lang="en">

@@ -153,6 +153,7 @@
 	
 	if(isset($_POST['cadProduto'])){
 		$pc->cadastrarProduto((string)$_POST['name'],(string)$_POST['price'],$_POST['quantity'],(string)$_POST['description']);
+		header('Location: verEstoque');
 	}
 
 ?>

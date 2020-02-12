@@ -80,5 +80,6 @@
 	$userController = new UserController();
 	if(isset($_POST['login'])){
 		$userController->signIn((string)$_POST['cpf'],(string)$_POST['password']);
+		header('Location: verEstoque');
 	}
 ?>
