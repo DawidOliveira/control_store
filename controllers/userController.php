@@ -87,7 +87,8 @@
 
         function logout(){
             session_destroy();
-            header("Location: index");
+            // header("Location: index");
+            echo("<script>location.href='index'</script>");
         }
     }   
 ?>

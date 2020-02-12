@@ -46,29 +46,7 @@
 			</div>
 		</header>
 		<div id="dw-s2" class="bmd-layout-drawer bg-faded">
-			<header class="drawer-header bg-primary">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm d-flex align-items-sm-center">
-							<img src="../assets/account.png" class="img-fluid" alt="Usuário">
-						</div>
-						<div class="col-lg">
-							<a href="#" class="h5 font-weight-bold text-white"><?php echo $_SESSION['dados']['nome'] ?></a>
-							<p class=" font-weight-light text-light">
-								<?php echo $_SESSION['dados']['cargo'] ?>
-							</p>
-							<a href="?func=logout" class="small text-white">Sair</a>
-							<?php
-								if(isset($_GET['func']) and $_GET['func']='logout'){
-									require('../controllers/userController.php');
-									$uc = new UserController();
-									$uc->logout();
-								}
-							?>
-						</div>
-					</div>
-				</div>
-			</header>
+			<?php require('header.php');?>
 			<ul class="list-group pt-0">
 				<li class="list-group-item">
 					<a href="vendas">Vendas</a>
@@ -90,14 +68,16 @@
 								<div class="col-9 display-4">
 									Estoque
 								</div>
+								<?php if($_SESSION["dados"]["cargo"]=="Gerente"){ ?>
 								<div class="col text-left font-weight-light">
 									<a type="button" class="btn btn-raised btn-primary" href="cadProduto">
 										Cadastrar novo produto
 									</a>
 								</div>
+								<?php }?>
 							</div>
 						</div>
-						<div class="card-subtitle text-muted mb-4">Visualize e altere o estoque do sistema</div>
+								<div class="card-subtitle text-muted mb-4">Visualize<?php if($_SESSION["dados"]["cargo"]=="Gerente"){ ?> e altere <?php } ?> o estoque do sistema</div>
 						<div class="gradiente">
 							<?php
 								foreach($dados as $product){
@@ -138,6 +118,7 @@
 															</div>
 														</div>
 													</div>
+													<?php if($_SESSION["dados"]["cargo"]=="Gerente"){ ?>
 													<div class="col-1">
 														<div class="row">
 															<div class="col">
@@ -154,6 +135,7 @@
 															</div>
 														</div>
 													</div>
+													<?php } ?>
 												</div>
 												<form action="#" method="post">
 													<div class="row mt-3">
@@ -175,7 +157,7 @@
 																			<div class="input-group mb-3">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/lock.png" alt="lock" width="32px" height="32px"> </div>
-																				<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
+																				<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
 																			</div>
 																		</div>
 																		<div class="col-auto">
@@ -228,7 +210,7 @@
 																			<div class="input-group mb-3">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/lock.png" alt="password" width="32px" height="32px"> </div>
-																				<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
+																				<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
 																			</div>
 																		</div>
 																	</div>
