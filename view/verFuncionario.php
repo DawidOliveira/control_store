@@ -4,6 +4,12 @@
 		header('Location: index');
 	}
 ?>
+<?php
+	require("../controllers/userController.php");
+	$uc = new UserController();
+	$dados = $uc->todosFuncionarios();
+	$i=0;
+?>
 
 <!doctype html>
 <html lang="en">
@@ -93,6 +99,7 @@
 							</div>
 						</div>
 						<div class="card-subtitle text-muted mb-4">Visualize e altere informações do usuário do sistema</div>
+						<?php foreach ($dados as $funcionario) { $i++;?>
 						<div class="card-body gradiente">
 							<div class="row mt-3">
 								<div class="col-1">
@@ -101,39 +108,39 @@
 								<div class="col">
 									<div class="card">
 										<div class="card-title h5 font-weight-bold mx-2 my-2">
-											Nome do funcionário
+											<?php echo $funcionario[1]; ?>
 										</div>
 										<div class="card-body mr-3">
 											<div class="row">
 												<div class="col">
 													<span class="font-weight-bold">Cargo</span>
-													<p class="font-weight-light">cargo do funcionário aqui</p>
+													<p class="font-weight-light"><?php echo $funcionario[5]; ?></p>
 												</div>
 												<div class="col">
 													<span class="font-weight-bold">Salário</span>
-													<p class="font-weight-light">salário do funcionário aqui</p>
+													<p class="font-weight-light"><?php echo $funcionario[3]; ?></p>
 												</div>
 												<div class="col">
 													<span class="font-weight-bold">CPF</span>
-													<p class="font-weight-light">CPF do funcionário aqui</p>
+													<p class="font-weight-light"><?php echo $funcionario[0]; ?></p>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-11">
 													<span class="font-weight-bold">Data de contratação</span>
-													<p class="font-weight-light">Contratado em: dd/mm/yyyy</p>
+													<p class="font-weight-light">Contratado em: <?php echo $funcionario[6]; ?></p>
 												</div>
 												<div class="col-1">
 													<div class="row">
 														<div class="col">
-															<button type="button" class="btn btn-outline btn-primary" data-target="#deleteProduto" aria-expanded="false" aria-controls="deleteProduto" data-toggle="collapse"><i class="material-icons">
+															<button type="button" class="btn btn-outline btn-primary" data-target="#deleteProduto<?php echo $i; ?>" aria-expanded="false" aria-controls="deleteProduto" data-toggle="collapse"><i class="material-icons">
 																	delete
 																</i></button>
 														</div>
 													</div>
 													<div class="row">
 														<div class="col">
-															<button type="button" class="btn btn-outline btn-primary" data-target="#editProduto" aria-expanded="false" aria-controls="editProduto" data-toggle="collapse"><i class="material-icons">
+															<button type="button" class="btn btn-outline btn-primary" data-target="#editProduto<?php echo $i; ?>" aria-expanded="false" aria-controls="editProduto" data-toggle="collapse"><i class="material-icons">
 																	edit
 																</i></button>
 														</div>
@@ -143,7 +150,7 @@
 											<form action="#" method="post">
 												<div class="row mt-3">
 													<div class="col">
-														<div class="collapse" id="deleteProduto">
+														<div class="collapse" id="deleteProduto<?php echo $i; ?>">
 															<div class="card card-body">
 																<span class="text-warning font-weight-bold">
 																	Digite sua senha para confirmar a exclusão do funcionário
@@ -153,9 +160,17 @@
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/lock.png" alt="lock" width="32px" height="32px"> </div>
+																			<input type="text" class="form-control" placeholder="CPF" readonly value="<?php echo $funcionario[0]; ?>" aria-label="cpf" name="cpfDelete" aria-describedby="basic-addon1">
+																		</div>
+																	</div>
+																	<div class="col">
+																		<div class="input-group mb-3">
+																			<div class="input-group-prepend mx-4 my-2 ">
+																				<img src="../assets/lock.png" alt="lock" width="32px" height="32px"> </div>
 																			<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
+																	
 																	<div class="col-auto">
 																		<button type="submit" name="enviarSenha" class="btn btn-raised btn-primary" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A exclusão do produto foi realizada">
 																			Confirmar
@@ -170,7 +185,7 @@
 											<form action="#" method="post">
 												<div class="row">
 													<div class="col">
-														<div class="collapse" id="editProduto">
+														<div class="collapse" id="editProduto<?php echo $i; ?>">
 															<div class="card card-body">
 																<span class="font-weight-bold">
 																	Editar informações do funcionário
@@ -180,14 +195,14 @@
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/user.png" alt="edit" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="CPF" readonly aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="CPF" value="<?php echo $funcionario[0]; ?>" readonly aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/edit.png" alt="edit" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="name" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Nome" value="<?php echo $funcionario[1]; ?>" aria-label="Nome" name="name" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																</div>
@@ -196,14 +211,14 @@
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/price.png" alt="salary" width="32px" height="32px"> </div>
-																			<input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
+																			<input type="text" class="form-control" placeholder="Salário" value="<?php echo $funcionario[3]; ?>" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
 																		</div>
 																	</div>
 																	<div class="col">
 																		<div class="input-group mb-3">
 																			<div class="input-group-prepend mx-4 my-2 ">
 																				<img src="../assets/wheel.png" alt="user" width="32px" height="32px"></div>
-																			<select class="form-control" name="cargo">
+																			<select class="form-control" required name="cargo">
 																				<div class="my-4">
 																					<option class="form-control">Cargo do funcionário</option>
 																					<option class="form-control" value="func">Funcionário</option>
@@ -229,6 +244,13 @@
 																		</button>
 																	</div>
 																</div>
+																<?php
+																	// adaptar função para confirmar senha
+																	if(isset($_POST['editarInfo'])){
+																		$uc->editarFuncionario((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['salary'],(string)$funcionario[4],(string)$_POST['cargo']);
+																		echo "<script>location.href='verFuncionario';</script>";
+																	}
+																?>
 															</div>
 														</div>
 													</div>
@@ -239,6 +261,13 @@
 								</div>
 							</div>
 						</div>
+						<?php } ?>
+						<?php
+							if(isset($_POST['enviarSenha'])){
+								$uc->deletarFuncionario((string)$_POST['cpfDelete']);
+								echo "<script>location.href='verFuncionario';</script>";
+							}
+						?>
 					</div>
 				</div>
 			</div>

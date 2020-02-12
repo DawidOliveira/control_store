@@ -75,6 +75,16 @@
             }
         }
 
+        function todosFuncionarios(){
+            try{
+                $dados = $this->user->todosFuncionarios();
+                
+                return $dados;
+            }catch(Exception $e){
+                echo("<script>alert('Erro ao inserir dados no banco!')</script>");
+            }
+        }
+
         function logout(){
             session_destroy();
             header("Location: index");

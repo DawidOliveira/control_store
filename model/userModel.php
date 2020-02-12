@@ -16,6 +16,7 @@
             try{
 
                 $pass = md5($senha);
+                date_default_timezone_set('UTC');
                 $hoje = date('y.m.d');
 
                 $this->conn->query("INSERT into funcionarios (cpf,nome,senha,salario,numero_conta,cargo,contratado_em) values ('$cpf','$nome','$pass','$salario','$numero_conta','$cargo','$hoje');");
@@ -134,6 +135,7 @@
 
             try{
 
+                $this->conn->query("DELETE from venda WHERE cpf_funcionarioFK='$cpf';");
                 $this->conn->query("DELETE from funcionarios WHERE cpf='$cpf';");
 
                 return true;
@@ -146,6 +148,23 @@
 
             return false;
 
+        }
+
+        function todosFuncionarios(){
+            try{
+
+                $query = $this->conn->query("SELECT * from funcionarios;");
+                $dados = $query->fetch_all();
+                
+                return $dados;
+
+            }catch(Exception $e){
+
+                echo("<script>alert('Erro ao selecionar dados no banco!')</script>");
+
+            }
+
+            return null;
         }
 
 
