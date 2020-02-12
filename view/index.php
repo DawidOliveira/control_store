@@ -23,7 +23,7 @@
 	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
 
-	<title>Cadastrar funcionário</title>
+	<title>Fazer login</title>
 </head>
 
 <body class="gradiente">
@@ -41,7 +41,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/user.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1" required/>
+											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1" maxlength="11" required/>
 										</div>
 									</div>
 								</div>

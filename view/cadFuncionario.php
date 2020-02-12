@@ -98,7 +98,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/user.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
+											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1" maxlength="11">
 										</div>
 									</div>
 								</div>
@@ -130,7 +130,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/bank.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1">
+											<input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1"  maxlength="7">
 										</div>
 									</div>
 								</div>
@@ -140,8 +140,8 @@
 									<select class="form-control" name="cargo">
 										<div class="my-4">
 											<option class="form-control">Cargo do novo funcionário</option>
-											<option class="form-control" value="func">Funcionário</option>
-											<option class="form-control" value="manager">Gerente</option>
+											<option class="form-control" value="Funcionário">Funcionário</option>
+											<option class="form-control" value="Gerente">Gerente</option>
 										</div>
 									</select>
 								</div>
