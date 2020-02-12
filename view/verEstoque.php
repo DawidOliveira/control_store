@@ -244,7 +244,7 @@
 																	
 																	<div class="row">
 																		<div class="col">
-																			<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="snackbar" data-style="toast" data-content="A alteração do produto foi realizada">
+																			<button type="submit" name="editarInfo" class="btn btn-raised btn-primary btn-lg btn-block">
 																				Confirmar
 																			</button>
 																		</div>
