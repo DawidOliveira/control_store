@@ -98,7 +98,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/price.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Preço" aria-label="price" name="price" aria-describedby="basic-addon1">
+											<input type="number" class="form-control" placeholder="Preço" title="Digite apenas números" aria-label="price" name="price" aria-describedby="basic-addon1">
 										</div>
 									</div>
 								</div>
@@ -107,7 +107,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/more.png" alt="quantity" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Quantidade" aria-label="quantidade" name="quantity" aria-describedby="basic-addon1">
+											<input type="number" class="form-control" placeholder="Quantidade" title="Digite apenas números" aria-label="quantidade" name="quantity" aria-describedby="basic-addon1">
 										</div>
 									</div>
 								</div>
@@ -153,7 +153,7 @@
 	
 	if(isset($_POST['cadProduto'])){
 		$pc->cadastrarProduto((string)$_POST['name'],(string)$_POST['price'],$_POST['quantity'],(string)$_POST['description']);
-		header('Location: verEstoque');
+		echo "<script>location.href='verEstoque';</script>";
 	}
 
 ?>

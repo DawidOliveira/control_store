@@ -1,8 +1,8 @@
 <?php
-	// session_start();
-	// if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
-	// 	header('Location: index');
-	// }
+	session_start();
+	if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
+		header('Location: index');
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -98,7 +98,7 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/user.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="CPF" aria-label="CPF" name="cpf" aria-describedby="basic-addon1" maxlength="11">
+											<input type="text" class="form-control" placeholder="CPF" pattern="[0-9]{11}" title="Digite apenas números" maxlength="11" aria-label="CPF" name="cpf" aria-describedby="basic-addon1">
 										</div>
 									</div>
 								</div>
@@ -107,14 +107,14 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/lock.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
+											<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password" aria-describedby="basic-addon1">
 										</div>
 									</div>
 									<div class="col">
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/confirm.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Confirmar senha" aria-label="Confirmar senha" name="confirm_password" aria-describedby="basic-addon1">
+											<input type="password" class="form-control" placeholder="Confirmar senha" aria-label="Confirmar senha" name="confirm_password" aria-describedby="basic-addon1">
 										</div>
 									</div>
 								</div>
@@ -123,14 +123,14 @@
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/price.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Salário" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
+											<input type="text" class="form-control" placeholder="Salário" pattern="[0-9]*" title="Digite apenas números" aria-label="Salário" name="salary" aria-describedby="basic-addon1">
 										</div>
 									</div>
 									<div class="col">
 										<div class="input-group mb-3">
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/bank.png" alt="user" width="32px" height="32px"> </div>
-											<input type="text" class="form-control" placeholder="Número da conta" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1"  maxlength="7">
+											<input type="text" class="form-control" placeholder="Número da conta" pattern="[0-9]{7}" title="Digite apenas números" aria-label="Número da conta" name="bank-account" aria-describedby="basic-addon1"  maxlength="7">
 										</div>
 									</div>
 								</div>
@@ -139,7 +139,7 @@
 										<img src="../assets/wheel.png" alt="user" width="32px" height="32px"></div>
 									<select class="form-control" name="cargo">
 										<div class="my-4">
-											<option class="form-control">Cargo do novo funcionário</option>
+											<option class="form-control">Selecione um cargo</option>
 											<option class="form-control" value="Funcionário">Funcionário</option>
 											<option class="form-control" value="Gerente">Gerente</option>
 										</div>
@@ -175,6 +175,6 @@
 	$userController = new UserController();
 	if(isset($_POST['cad'])){
 		$userController->signUp((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['password'],(string)$_POST['confirm_password'],(string)$_POST['salary'],(string)$_POST['bank-account'],(string)$_POST['cargo']);
-		header("Location: verFuncionario");
+		echo "<script>location.href='verFuncionario';</script>";
 	}
 ?>

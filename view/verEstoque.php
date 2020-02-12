@@ -175,7 +175,7 @@
 																			<div class="input-group mb-3">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/lock.png" alt="lock" width="32px" height="32px"> </div>
-																				<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
+																				<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
 																			</div>
 																		</div>
 																		<div class="col-auto">
@@ -212,7 +212,7 @@
 																			<div class="input-group mb-3">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/price.png" alt="price" width="32px" height="32px"> </div>
-																				<input type="text" class="form-control" placeholder="Valor" aria-label="Valor" name="price<?php echo $product[0]; ?>" value="<?php echo $product[2]; ?>" aria-describedby="basic-addon1">
+																				<input type="number" class="form-control" placeholder="Valor" aria-label="Valor" title="Digite apenas números" name="price<?php echo $product[0]; ?>" value="<?php echo $product[2]; ?>" aria-describedby="basic-addon1">
 																			</div>
 																		</div>
 																	</div>
@@ -221,14 +221,14 @@
 																			<div class="input-group mb-3">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/more.png" alt="quantity" width="32px" height="32px"> </div>
-																				<input type="text" class="form-control" placeholder="Quantidade" aria-label="Quantidade" name="quantity<?php echo $product[0]; ?>" value="<?php echo $product[3]; ?>"aria-describedby="basic-addon1">
+																				<input type="number" class="form-control" placeholder="Quantidade" aria-label="Quantidade" title="Digite apenas números" name="quantity<?php echo $product[0]; ?>" value="<?php echo $product[3]; ?>"aria-describedby="basic-addon1">
 																			</div>
 																		</div>
 																		<div class="col">
 																			<div class="input-group mb-3">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/lock.png" alt="password" width="32px" height="32px"> </div>
-																				<input type="text" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
+																				<input type="password" class="form-control" placeholder="Senha" aria-label="Senha" name="password<?php echo $product[0]; ?>" aria-describedby="basic-addon1">
 																			</div>
 																		</div>
 																	</div>
@@ -237,7 +237,7 @@
 																			<div class="input-group mb-6">
 																				<div class="input-group-prepend mx-4 my-2 ">
 																					<img src="../assets/more.png" alt="Description" width="32px" height="32px"></div>
-																					<textarea type="text" class="form-control" placeholder="Descrição" aria-label="Descricao" name="desc<?php echo $product[0]; ?>" aria-describedby="basic-addon1"><?php echo $product[4]; ?></textarea>
+																					<textarea type="text" class="form-control" placeholder="Descrição" rows="4" aria-label="Descricao" name="desc<?php echo $product[0]; ?>" aria-describedby="basic-addon1"><?php echo $product[4]; ?></textarea>
 																			</div>
 																		</div>
 																	</div>
@@ -249,13 +249,6 @@
 																			</button>
 																		</div>
 																	</div>
-																	<?php
-																		// adaptar função para confirmar senha
-																		if(isset($_POST['editarInfo'])){
-																			$pc->editarProduto($product[0],(string)$_POST['name'.$product[0]],(string)$_POST['price'.$product[0]],$_POST['quantity'.$product[0]],(string)$_POST['desc'.$product[0]]);
-																			echo "<script>location.href='verEstoque';</script>";
-																		}
-																	?>
 																</div>
 															</div>
 														</div>
@@ -275,7 +268,18 @@
 									$pc->deletarProduto($d);
 									echo "<script>location.href='verEstoque';</script>";
 								}
-							?>
+						?>
+						<?php
+							if(isset($_POST['editarInfo'])){
+								if($_SESSION['dados']['senha'] == md5($_POST['password'])){
+									$pc->editarProduto($product[0],(string)$_POST['name'.$product[0]],(string)$_POST['price'.$product[0]],$_POST['quantity'.$product[0]],(string)$_POST['desc'.$product[0]]);
+									echo "<script>location.href='verEstoque';</script>";
+								}
+								else{
+									echo "<script>window.alert('Digite uma senha válida');</script>";
+								}
+							}
+						?>
 					</div>
 				</div>
 			</div>
