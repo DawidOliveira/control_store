@@ -3,6 +3,7 @@
 	if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
 		header('Location: index');
 	}
+	
 ?>
 <?php
 	require("../controllers/productController.php");

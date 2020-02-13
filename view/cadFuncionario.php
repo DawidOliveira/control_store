@@ -3,6 +3,9 @@
 	if(!isset($_SESSION['logado']) or !$_SESSION['logado']){
 		header('Location: index');
 	}
+	if($_SESSION['dados']['cargo']=="Funcionário"){
+		header('Location: verEstoque');
+	}
 ?>
 <!doctype html>
 <html lang="en">
