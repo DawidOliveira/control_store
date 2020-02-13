@@ -1,4 +1,4 @@
-Equipe:
+<h3 style="font-weight: bold">Equipe:</h3>
     <br>
     -Dáwid Silva Oliveira
     <br>
@@ -9,7 +9,7 @@ Equipe:
     -Vinícyus Silva Soares
     <br>
 
-Instruções para executar o projeto:
+<h3 style="font-weight: bold">Instruções para executar o projeto:</h3>
     <br>
     -Executar o projeto em algum servidor de PHP e MySQL(de preferência, XAMPP)
     <br>
