@@ -68,11 +68,6 @@
 								<div class="col-9 display-4">
 									Vendas
 								</div>
-								<div class="col text-left font-weight-light">
-									<button type="button" id="addProduto" class="btn btn-raised btn-primary" >
-										Adicionar produto à venda
-									</button>
-								</div>
 							</div>
 						</div>
 						<div class="card-subtitle text-muted mb-4">Realizar vendas no sistema</div>
@@ -80,10 +75,41 @@
 							<div class="card-body">
                                 <form action="#" method="post">
 									<div id="item">
-
+										 <div class="row mt-3">   
+											 <div class="col-1">   
+												 <img src="../assets/list.png" alt="produto" width="64" height="64">   
+											 </div>   
+											 <div class="col">   
+												 <div class="card">   
+													 <div class="card-title h5 mx-2 my-2">   
+														 <div class="input-group">   
+															 <select class="form-control" name="produto">   
+																 <div class="my-4">   
+																	 <option class="form-control" value="Produto">Produto</option>   
+																 </div>   
+															 </select>   
+														 </div>   
+													 </div>   
+													 <div class="card-body mr-3">   
+														 <div class="row">   
+															 <div class="col">   
+																 <span class="font-weight-bold">Quantidade</span>   
+																 <div class="input-group mb-3">   
+																	 <input type="number" class="form-control" placeholder="Quantidade" title="Digite apenas números" aria-label="quantidade" name="quantity" aria-describedby="basic-addon1">   
+																 </div>   
+															 </div>   
+															 <div class="col">   
+																 <span class="font-weight-bold">Valor</span>   
+																 <p class="font-weight-light">valor do produto</p>   
+															 </div>   
+														 </div>   
+													 </div>   
+												 </div>   
+											 </div>   
+										 </div> 
 									</div>
 									<div class="mt-4">
-										<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" id="finalizarVenda" style="display: none">Finalizar Venda</button>
+										<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" id="finalizarVenda">Finalizar Venda</button>
 									</div>
 								</form>
 							</div>
@@ -105,46 +131,6 @@
 <script>
 	$(document).ready(function() {
 		$('body').bootstrapMaterialDesign();
-		let count = 0
-		let content =	    '<div class="row mt-3">'+
-								'<div class="col-1">'+
-									'<img src="../assets/list.png" alt="produto" width="64" height="64">'+
-								'</div>'+
-								'<div class="col">'+
-									'<div class="card">'+
-										'<div class="card-title h5 mx-2 my-2">'+
-											'<div class="input-group">'+
-												'<select class="form-control" name="produto">'+
-													'<div class="my-4">'+
-														'<option class="form-control" value="Produto">Produto</option>'+
-													'</div>'+
-												'</select>'+
-											'</div>'+
-										'</div>'+
-										'<div class="card-body mr-3">'+
-											'<div class="row">'+
-												'<div class="col">'+
-													'<span class="font-weight-bold">Quantidade</span>'+
-													'<div class="input-group mb-3">'+
-														'<input type="number" class="form-control" placeholder="Quantidade" title="Digite apenas números" aria-label="quantidade" name="quantity" aria-describedby="basic-addon1">'+
-													'</div>'+
-												'</div>'+
-												'<div class="col">'+
-													'<span class="font-weight-bold">Valor</span>'+
-													'<p class="font-weight-light">valor do produto</p>'+
-												'</div>'+
-											'</div>'+
-										'</div>'+
-									'</div>'+
-								'</div>'+
-							'</div>'
-		$('#addProduto').click(function(){
-            document.getElementById("item").innerHTML += content
-			count++
-			if(count>=1){
-				document.getElementById('finalizarVenda').style.display = 'block'
-			}
-        })
 	});
 </script>
 
