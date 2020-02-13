@@ -21,7 +21,7 @@
                 if($quantidade > 0){                
                     if($qtd['quantidade'] >= $quantidade){
                         $qtdTotal = $qtd['valor']*$quantidade;
-                        echo("<script>confirm('A venda deu: R$ $qtdTotal!')</script>");
+                        echo("<script>var opc = alert('Valor total da venda: R$ $qtdTotal!')</script>");
                         $this->sale->cadastrarVenda($cod_produtoFK, $cpf_funcionarioFK, $quantidade);
                         echo("<script>alert('Venda bem sucedida!')</script>");
                     } else {
@@ -46,4 +46,3 @@
         }
     }
 ?>
-

@@ -22,6 +22,10 @@ SET time_zone = "+00:00";
 -- Banco de dados: `control_store`
 --
 
+CREATE DATABASE IF NOT EXISTS control_store;
+
+USE `control_store`;
+
 -- --------------------------------------------------------
 
 --
