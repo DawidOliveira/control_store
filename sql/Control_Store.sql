@@ -43,7 +43,7 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`cpf`, `nome`, `senha`, `salario`, `numero_conta`, `cargo`, `contratado_em`) VALUES
-('111.111.111-11', 'dawid', '123', '100', '12.123-12', 'gerente', '0000-00-00');
+('11111111111', 'ControlStore', '202cb962ac59075b964b07152d234b70', '100', '1212312', 'Gerente', '2020-02-12');
 
 -- --------------------------------------------------------
 

@@ -6,7 +6,7 @@
         
         public function __construct() {
             try{
-                date_default_timezone_set('UTC');
+                date_default_timezone_set('America/Maceio');
 
                 $host = "localhost";
                 $user = "root";

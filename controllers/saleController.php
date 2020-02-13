@@ -9,9 +9,9 @@
         private $user;
 
         function __construct(){
-            $this->sale = new saleModel();
-            $this->user = new userModel();
-            $this->product = new productModel();
+            $this->sale = new SaleModel();
+            $this->user = new UserModel();
+            $this->product = new ProductModel();
         }
 
         function cadastrarVenda($cod_produtoFK,$cpf_funcionarioFK,$quantidade){
@@ -20,10 +20,12 @@
 
                 if($quantidade > 0){                
                     if($qtd['quantidade'] >= $quantidade){
+                        $qtdTotal = $qtd['valor']*$quantidade;
+                        echo("<script>confirm('A venda deu: R$ $qtdTotal!')</script>");
                         $this->sale->cadastrarVenda($cod_produtoFK, $cpf_funcionarioFK, $quantidade);
                         echo("<script>alert('Venda bem sucedida!')</script>");
                     } else {
-                        echo("<script>alert('Produto fora de estoque!')</script>");
+                        echo("<script>alert('Produto/Quantidade indisponível!')</script>");
                     }
                 } else {
                     echo("<script>alert('Quantidade inválida!')</script>");

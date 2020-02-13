@@ -5,7 +5,7 @@
                 <img src="../assets/account.png" class="img-fluid" alt="Usuário">
             </div>
             <div class="col-lg">
-                <a href="#" class="h5 font-weight-bold text-white"><?php echo $_SESSION['dados']['nome'] ?></a>
+                <a href="verFuncionario" class="h5 font-weight-bold text-white"><?php echo $_SESSION['dados']['nome'] ?></a>
                 <p class=" font-weight-light text-light">
                     <?php echo $_SESSION['dados']['cargo'] ?>
                 </p>

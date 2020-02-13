@@ -73,7 +73,7 @@
 											<div class="input-group-prepend mx-4 my-2 ">
 												<img src="../assets/edit.png" alt="edit" width="32px" height="32px">
 											</div>
-											<input type="text" class="form-control" placeholder="Nome" aria-label="Nome" value="" name="name" aria-describedby="basic-addon1">
+											<input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="name" aria-describedby="basic-addon1">
 										</div>
 									</div>
 									<div class="col">

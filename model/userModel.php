@@ -16,7 +16,7 @@
             try{
 
                 $pass = md5($senha);
-                date_default_timezone_set('UTC');
+                date_default_timezone_set('America/Maceio');
                 $hoje = date('y.m.d');
 
                 $this->conn->query("INSERT into funcionarios (cpf,nome,senha,salario,numero_conta,cargo,contratado_em) values ('$cpf','$nome','$pass','$salario','$numero_conta','$cargo','$hoje');");

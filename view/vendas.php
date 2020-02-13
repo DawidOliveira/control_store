@@ -7,8 +7,11 @@
 ?>
 <?php
 	require("../controllers/productController.php");
+	require("../controllers/saleController.php");
 	$pc = new ProductController();
 	$dados = $pc->todosDados();
+	$sc = new SaleController();
+
 ?>
 
 <!doctype html>
@@ -85,8 +88,10 @@
 													 <div class="card-title h5 mx-2 my-2">   
 														 <div class="input-group">   
 															 <select class="form-control" name="produto">   
-																 <div class="my-4">   
-																	 <option class="form-control" value="Produto">Produto</option>   
+																 <div class="my-4">
+																 	<?php foreach($dados as $p){ ?>
+																	 <option class="form-control" value="<?php echo $p[0]; ?>"><?php echo $p[0]." - ".$p[1]; ?></option>   
+																	<?php } ?>
 																 </div>   
 															 </select>   
 														 </div>   
@@ -99,10 +104,10 @@
 																	 <input type="number" class="form-control" placeholder="Quantidade" title="Digite apenas números" aria-label="quantidade" name="quantity" aria-describedby="basic-addon1">   
 																 </div>   
 															 </div>   
-															 <div class="col">   
+															 <!-- <div class="col">   
 																 <span class="font-weight-bold">Valor</span>   
-																 <p class="font-weight-light">valor do produto</p>   
-															 </div>   
+																 <p class="font-weight-light"></p>   
+															 </div>    -->
 														 </div>   
 													 </div>   
 												 </div>   
@@ -110,9 +115,14 @@
 										 </div> 
 									</div>
 									<div class="mt-4">
-										<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" id="finalizarVenda">Finalizar Venda</button>
+										<button type="submit" class="btn btn-raised btn-primary btn-lg btn-block" id="finalizarVenda" name="finalizar">Finalizar Venda</button>
 									</div>
 								</form>
+								<?php
+									if(isset($_POST['finalizar'])){
+										$sc->cadastrarVenda($_POST['produto'],(string)$_SESSION['dados']['cpf'],$_POST['quantity']);
+									}
+								?>
 							</div>
 						</div>
 					</div>

@@ -80,6 +80,7 @@
 								<div class="card-subtitle text-muted mb-4">Visualize<?php if($_SESSION["dados"]["cargo"]=="Gerente"){ ?> e altere <?php } ?> o estoque do sistema</div>
 						<div class="gradiente">
 							<?php
+								$count = 0;
 								foreach($dados as $product){
 							?>
 							<div class="card-body">
@@ -231,6 +232,20 @@
 																			</button>
 																		</div>
 																	</div>
+																	<?php
+																		if(isset($_POST['editarInfo'])){
+																			if($_SESSION['dados']['senha'] == md5($_POST['password'])){
+																				$pc->editarProduto($product[0],(string)$_POST['name'.$product[0]],(string)$_POST['price'.$product[0]],$_POST['quantity'.$product[0]],(string)$_POST['desc'.$product[0]]);
+																				echo "<script>location.href='verEstoque';</script>";
+																			}
+																			else{
+																				if($count == 0){
+																					echo "<script>window.alert('Digite uma senha válida');</script>";
+																					$count++;
+																				}
+																			}
+																		}
+																	?>
 																</div>
 															</div>
 														</div>
@@ -246,22 +261,20 @@
 						<?php
 							// adaptar função para confirmar senha
 								if(isset($_POST['enviarSenha'])){
-									$d = $_POST['codDelete'];
-									$pc->deletarProduto($d);
-									echo "<script>location.href='verEstoque';</script>";
+									if($_SESSION['dados']['senha'] == md5($_POST['password'])){
+										$d = $_POST['codDelete'];
+										$pc->deletarProduto($d);
+										echo "<script>location.href='verEstoque';</script>";
+									}
+									else{
+										if($count == 0){
+											echo "<script>window.alert('Digite uma senha válida');</script>";
+											$count++;
+										}
+									}
 								}
 						?>
-						<?php
-							if(isset($_POST['editarInfo'])){
-								if($_SESSION['dados']['senha'] == md5($_POST['password'])){
-									$pc->editarProduto($product[0],(string)$_POST['name'.$product[0]],(string)$_POST['price'.$product[0]],$_POST['quantity'.$product[0]],(string)$_POST['desc'.$product[0]]);
-									echo "<script>location.href='verEstoque';</script>";
-								}
-								else{
-									echo "<script>window.alert('Digite uma senha válida');</script>";
-								}
-							}
-						?>
+						
 					</div>
 				</div>
 			</div>

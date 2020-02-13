@@ -80,7 +80,7 @@
 						</div>
 						<div class="card-subtitle text-muted mb-4">Visualize<?php if($_SESSION["dados"]["cargo"]=="Gerente"){ ?> e altere <?php } ?> informações dos funcionários no sistema</div>
 						<div class="gradiente">
-							<?php foreach ($dados as $funcionario) { $i++;?>
+							<?php $count = 0; foreach ($dados as $funcionario) { $i++;?>
 								<div class="card-body">
 									<div class="row mt-3">
 										<div class="col-1">
@@ -227,6 +227,20 @@
 																				</button>
 																			</div>
 																		</div>
+																		<?php
+																			if(isset($_POST['editarInfo'])){
+																				if($_SESSION['dados']['senha'] == md5($_POST['password'])){
+																					$uc->editarFuncionario((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['salary'],(string)$funcionario[4],(string)$_POST['cargo']);
+																					echo "<script>location.href='verFuncionario';</script>";
+																				}
+																				else{
+																					if($count == 0){
+																						echo "<script>window.alert('Digite uma senha válida');</script>";
+																						$count++;
+																					}
+																				}
+																			}
+																		?>
 																	</div>
 																</div>
 															</div>
@@ -241,21 +255,19 @@
 						</div>
 						<?php
 							if(isset($_POST['enviarSenha'])){
-								$uc->deletarFuncionario((string)$_POST['cpfDelete']);
-								echo "<script>location.href='verFuncionario';</script>";
-							}
-						?>
-						<?php
-							if(isset($_POST['editarInfo'])){
 								if($_SESSION['dados']['senha'] == md5($_POST['password'])){
-									$uc->editarFuncionario((string)$_POST['cpf'],(string)$_POST['name'],(string)$_POST['salary'],(string)$funcionario[4],(string)$_POST['cargo']);
+									$uc->deletarFuncionario((string)$_POST['cpfDelete']);
 									echo "<script>location.href='verFuncionario';</script>";
 								}
 								else{
-									echo "<script>window.alert('Digite uma senha válida');</script>";
+									if($count == 0){
+										echo "<script>window.alert('Digite uma senha válida');</script>";
+										$count++;
+									}
 								}
 							}
 						?>
+						
 					</div>
 				</div>
 			</div>
