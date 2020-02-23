@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpunit>
+<phpunit colors="true" bootstrap="./vendor/autoload.php">
+    <testsuites>
+        <testsuite name="money">
+        <directory>tests</directory>
+        </testsuite>
+    </testsuites>
     <php>
-        <var name="DB_DSN" value="mysqli:dbname=Control_Store;host=localhost" />
+        <var name="DB_DSN" value="mysql:dbname=Control_Store;host=localhost" />
         <var name="DB_USER" value="root" />
         <var name="DB_PASSWD" value="" />
         <var name="DB_DBNAME" value="Control_Store" />

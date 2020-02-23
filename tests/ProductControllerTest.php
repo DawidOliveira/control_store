@@ -17,17 +17,17 @@
 
         public function testCadastrarProduto():void{
 
-            $this->assertEquals(true,$pc->cadastrarProduto("Celular","1000",10,"Xiaomi"));
+            $this->assertTrue(true,$pc->cadastrarProduto("Celular","1000",10,"Xiaomi"));
         }
 
         public function testDeletarProduto():void{
 
-            $this->assertEquals(true,$pc->deletarProduto(1));
+            $this->assertTrue($pc->deletarProduto(1));
         }
 
         public function testEditarProduto():void{
 
-            $this->assertEquals(true,$pc->editarProduto(1,"Celular","1000",10,"Xiaomi"));
+            $this->assertTrue($pc->editarProduto(1,"Celular","1000",10,"Xiaomi"));
         }
 
 
