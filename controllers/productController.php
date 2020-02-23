@@ -45,17 +45,21 @@
 			if($this->produtomodel->verificarProduto($cod)){
 				$this->produtomodel->deletarProduto($cod);
                 echo("<script>alert('Produto deletado com sucesso!')</script>");
+                return true;
 			}else{
-				echo("<script>alert('O produto não foi encontrado!')</script>");
+                echo("<script>alert('O produto não foi encontrado!')</script>");
+                return false;
 			}
 		}
 		
 		function editarProduto($cod,$nome,$valor,$quantidade,$descricao){
 			if($this->produtomodel->verificarProduto($cod)){
 				$this->produtomodel->editarProduto($cod,$nome,$valor,$quantidade,$descricao);
-				echo("<script>alert('Produto alterado com sucesso!')</script>");
+                echo("<script>alert('Produto alterado com sucesso!')</script>");
+                return true;
 			}else{
-				echo("<script>alert('Código do produto não existe!')</script>");
+                echo("<script>alert('Código do produto não existe!')</script>");
+                return false;
 				
 			}
 		}
